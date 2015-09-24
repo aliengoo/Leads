@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -18,12 +19,13 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -139,7 +141,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
+    <Content Include="gulp\gulp-build.app.js" />
+    <Content Include="gulp\gulp-build.helper.js" />
+    <Content Include="gulp\gulp-build.index-html.js" />
+    <Content Include="gulp\gulp-build.reusable-tasks.js" />
+    <Content Include="gulp\gulp-build.vendor.js" />
+    <Content Include="gulp\gulp-config.command-line-args.js" />
+    <Content Include="gulp\gulp-config.filters.js" />
+    <Content Include="gulp\gulp-config.npm.js" />
+    <Content Include="gulp\gulp-config.public-paths.js" />
+    <Content Include="gulp\gulp-deploy.js" />
+    <Content Include="gulp\gulp-serve.js" />
+    <Content Include="gulp\notification-images\error.png" />
+    <Content Include="gulp\notification-images\failed.png" />
+    <Content Include="gulp\notification-images\success.png" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <Content Include="tsd.json" />
+    <Content Include=".bowerrc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,55 +173,73 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="ClientModels\PagedFilterRequest.cs" />
-    <Compile Include="Configuration\Application\ApplicationConfiguration.cs" />
-    <Compile Include="Configuration\Attributes\CollectionNameAttribute.cs" />
-    <Compile Include="Configuration\Application\CustomDirectRouteProvider.cs" />
-    <Compile Include="Configuration\Application\IApplicationConfiguration.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\InterestsController.cs" />
-    <Compile Include="Controllers\NotesController.cs" />
-    <Compile Include="Controllers\SubDocumentController.cs" />
-    <Compile Include="Database\Document\Sub\Customers.cs" />
-    <Compile Include="Database\Document\Sub\Interests.cs" />
-    <Compile Include="Database\Document\Sub\Notes.cs" />
-    <Compile Include="Pagination\Page.cs" />
-    <Compile Include="Controllers\LeadsController.cs" />
-    <Compile Include="Database\Document\DocumentCrud.cs" />
-    <Compile Include="Database\Document\IDocumentCrud.cs" />
-    <Compile Include="Database\Document\ILeads.cs" />
-    <Compile Include="Database\Document\Sub\ISubDocumentCrud.cs" />
-    <Compile Include="Database\Document\Leads.cs" />
-    <Compile Include="Database\Document\Sub\SubDocumentCrud.cs" />
-    <Compile Include="Database\LeadsDatabase.cs" />
-    <Compile Include="Database\Models\Address.cs" />
-    <Compile Include="Database\Models\ContactMethod.cs" />
-    <Compile Include="Database\Models\Customer.cs" />
-    <Compile Include="Database\ILeadsDatabase.cs" />
-    <Compile Include="Database\Models\IDocument.cs" />
-    <Compile Include="Database\Models\Interest.cs" />
-    <Compile Include="Database\Models\ISubDocument.cs" />
-    <Compile Include="Database\Models\Lead.cs" />
-    <Compile Include="Database\Models\LeadStatus.cs" />
-    <Compile Include="Database\Models\Note.cs" />
-    <Compile Include="Exceptions\CollectionNotFoundException.cs" />
-    <Compile Include="Exceptions\DocumentNotFoundException.cs" />
-    <Compile Include="Exceptions\PropertyNotFound.cs" />
-    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="src\ClientModels\PagedFilterRequest.cs" />
+    <Compile Include="src\Configuration\Application\ApplicationConfiguration.cs" />
+    <Compile Include="src\Configuration\Attributes\CollectionNameAttribute.cs" />
+    <Compile Include="src\Configuration\Application\CustomDirectRouteProvider.cs" />
+    <Compile Include="src\Configuration\Application\IApplicationConfiguration.cs" />
+    <Compile Include="src\Controllers\CustomersController.cs" />
+    <Compile Include="src\Controllers\InterestsController.cs" />
+    <Compile Include="src\Controllers\NotesController.cs" />
+    <Compile Include="src\Controllers\SubDocumentController.cs" />
+    <Compile Include="src\Database\Document\Sub\Customers.cs" />
+    <Compile Include="src\Database\Document\Sub\Interests.cs" />
+    <Compile Include="src\Database\Document\Sub\Notes.cs" />
+    <Compile Include="src\Pagination\Page.cs" />
+    <Compile Include="src\Controllers\LeadsController.cs" />
+    <Compile Include="src\Database\Document\DocumentCrud.cs" />
+    <Compile Include="src\Database\Document\IDocumentCrud.cs" />
+    <Compile Include="src\Database\Document\ILeads.cs" />
+    <Compile Include="src\Database\Document\Sub\ISubDocumentCrud.cs" />
+    <Compile Include="src\Database\Document\Leads.cs" />
+    <Compile Include="src\Database\Document\Sub\SubDocumentCrud.cs" />
+    <Compile Include="src\Database\LeadsDatabase.cs" />
+    <Compile Include="src\Database\Models\Address.cs" />
+    <Compile Include="src\Database\Models\ContactMethod.cs" />
+    <Compile Include="src\Database\Models\Customer.cs" />
+    <Compile Include="src\Database\ILeadsDatabase.cs" />
+    <Compile Include="src\Database\Models\IDocument.cs" />
+    <Compile Include="src\Database\Models\Interest.cs" />
+    <Compile Include="src\Database\Models\ISubDocument.cs" />
+    <Compile Include="src\Database\Models\Lead.cs" />
+    <Compile Include="src\Database\Models\LeadStatus.cs" />
+    <Compile Include="src\Database\Models\Note.cs" />
+    <Compile Include="src\Exceptions\CollectionNotFoundException.cs" />
+    <Compile Include="src\Exceptions\DocumentNotFoundException.cs" />
+    <Compile Include="src\Exceptions\PropertyNotFound.cs" />
+    <Compile Include="src\Helpers\ReflectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartUp\CorsRegistration.cs" />
-    <Compile Include="StartUp\DependencyRegistration.cs" />
-    <Compile Include="StartUp\JsonRegistration.cs" />
-    <Compile Include="StartUp\StartUpApp.cs" />
-    <Compile Include="StartUp\WebApiRegistration.cs" />
+    <Compile Include="src\StartUp\CorsRegistration.cs" />
+    <Compile Include="src\StartUp\DependencyRegistration.cs" />
+    <Compile Include="src\StartUp\JsonRegistration.cs" />
+    <Compile Include="src\StartUp\StartUpApp.cs" />
+    <Compile Include="src\StartUp\WebApiRegistration.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="client\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\angular-ui-router\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="typings\greensock\greensock.d.ts" />
+    <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\raphael\raphael.d.ts" />
+    <TypeScriptCompile Include="typings\typeahead\typeahead.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
