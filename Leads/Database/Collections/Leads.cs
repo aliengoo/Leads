@@ -2,10 +2,8 @@
 
 namespace Leads.Database.Collections
 {
-    public class Leads : BaseCollection<Lead>, ILeads
-    {
-        public Leads(ILeadsDatabase leadsDatabase) : base("leads", leadsDatabase)
-        {
-        }
-    }
+	public class Leads
+	{
+		
+	}
 }

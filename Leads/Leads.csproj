@@ -153,12 +153,15 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Configuration\ApplicationConfiguration.cs" />
+    <Compile Include="Configuration\Attributes\CollectionNameAttribute.cs" />
     <Compile Include="Configuration\CustomDirectRouteProvider.cs" />
     <Compile Include="Configuration\IApplicationConfiguration.cs" />
-    <Compile Include="Database\Collections\BaseCollection.cs" />
-    <Compile Include="Database\Collections\IBaseCollection.cs" />
+    <Compile Include="Database\Collections\DocumentCrud.cs" />
+    <Compile Include="Database\Collections\IDocumentCrud.cs" />
     <Compile Include="Database\Collections\ILeads.cs" />
+    <Compile Include="Database\Collections\ISubDocumentCrud.cs" />
     <Compile Include="Database\Collections\Leads.cs" />
+    <Compile Include="Database\Collections\SubDocumentCrud.cs" />
     <Compile Include="Database\LeadsDatabase.cs" />
     <Compile Include="Database\Models\Address.cs" />
     <Compile Include="Database\Models\ContactMethod.cs" />
@@ -166,9 +169,14 @@
     <Compile Include="Database\ILeadsDatabase.cs" />
     <Compile Include="Database\Models\IDocument.cs" />
     <Compile Include="Database\Models\Interest.cs" />
+    <Compile Include="Database\Models\ISubDocument.cs" />
     <Compile Include="Database\Models\Lead.cs" />
     <Compile Include="Database\Models\LeadStatus.cs" />
     <Compile Include="Database\Models\Note.cs" />
+    <Compile Include="Exceptions\CollectionNotFoundException.cs" />
+    <Compile Include="Exceptions\DocumentNotFoundException.cs" />
+    <Compile Include="Exceptions\PropertyNotFound.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartUp\CorsRegistration.cs" />
     <Compile Include="StartUp\DependencyRegistration.cs" />

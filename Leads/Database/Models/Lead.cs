@@ -5,6 +5,9 @@ using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace Leads.Database.Models
 {
+	using Leads.Configuration.Attributes;
+
+	[CollectionName("leads")]
     public class Lead : IDocument
     {
         [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
