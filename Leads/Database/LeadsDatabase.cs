@@ -6,7 +6,9 @@ using MongoDB.Driver;
 
 namespace Leads.Database
 {
-    public class LeadsDatabase : ILeadsDatabase
+	using Leads.Configuration.Application;
+
+	public class LeadsDatabase : ILeadsDatabase
     {
         // fields
         private readonly IMongoDatabase _database;
@@ -17,19 +19,15 @@ namespace Leads.Database
         public IMongoDatabase Database => _database;
 
         // constructors
-        static LeadsDatabase()
-        {
-            // register the conventions
-            var pack = new ConventionPack
-                            {
-                                new CamelCaseElementNameConvention(),
-                                new EnumRepresentationConvention(BsonType.String)
-                            };
+		static LeadsDatabase()
+		{
+			// register the conventions
+			var pack = new ConventionPack { new EnumRepresentationConvention(BsonType.String) };
 
-            ConventionRegistry.Register("conventions", pack, t => true);
-        }
+			ConventionRegistry.Register("conventions", pack, t => true);
+		}
 
-        public LeadsDatabase(IApplicationConfiguration applicationConfiguration)
+		public LeadsDatabase(IApplicationConfiguration applicationConfiguration)
         {
             var url = MongoUrl.Create(applicationConfiguration.ConnectionString);
             _database = new MongoClient(url).GetDatabase(url.DatabaseName);

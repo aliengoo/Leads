@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace Leads.Database.Models
 {
-	using Leads.Configuration.Attributes;
+	using Configuration.Attributes;
 
 	[CollectionName("leads")]
     public class Lead : IDocument
@@ -14,7 +14,7 @@ namespace Leads.Database.Models
         public string Id { get; set; }
 
         [BsonRequired]
-        public Customer Customer { get; set; }
+        public List<Customer> Customers { get; set; }
 
         [BsonRequired]
         public DateTime Created { get; set; }
@@ -24,6 +24,9 @@ namespace Leads.Database.Models
         [BsonRequired]
         public LeadStatus Status { get; set; }
 
-        public List<Note> Notes { get; set; } 
-    }
+        public List<Note> Notes { get; set; }
+
+		[BsonExtraElements]
+		public IDictionary<string, object> Extras { get; set; }
+	}
 }

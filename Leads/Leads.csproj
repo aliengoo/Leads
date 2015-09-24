@@ -152,16 +152,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="Configuration\ApplicationConfiguration.cs" />
+    <Compile Include="ClientModels\PagedFilterRequest.cs" />
+    <Compile Include="Configuration\Application\ApplicationConfiguration.cs" />
     <Compile Include="Configuration\Attributes\CollectionNameAttribute.cs" />
-    <Compile Include="Configuration\CustomDirectRouteProvider.cs" />
-    <Compile Include="Configuration\IApplicationConfiguration.cs" />
-    <Compile Include="Database\Collections\DocumentCrud.cs" />
-    <Compile Include="Database\Collections\IDocumentCrud.cs" />
-    <Compile Include="Database\Collections\ILeads.cs" />
-    <Compile Include="Database\Collections\ISubDocumentCrud.cs" />
-    <Compile Include="Database\Collections\Leads.cs" />
-    <Compile Include="Database\Collections\SubDocumentCrud.cs" />
+    <Compile Include="Configuration\Application\CustomDirectRouteProvider.cs" />
+    <Compile Include="Configuration\Application\IApplicationConfiguration.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\InterestsController.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Controllers\SubDocumentController.cs" />
+    <Compile Include="Database\Document\Sub\Customers.cs" />
+    <Compile Include="Database\Document\Sub\Interests.cs" />
+    <Compile Include="Database\Document\Sub\Notes.cs" />
+    <Compile Include="Pagination\Page.cs" />
+    <Compile Include="Controllers\LeadsController.cs" />
+    <Compile Include="Database\Document\DocumentCrud.cs" />
+    <Compile Include="Database\Document\IDocumentCrud.cs" />
+    <Compile Include="Database\Document\ILeads.cs" />
+    <Compile Include="Database\Document\Sub\ISubDocumentCrud.cs" />
+    <Compile Include="Database\Document\Leads.cs" />
+    <Compile Include="Database\Document\Sub\SubDocumentCrud.cs" />
     <Compile Include="Database\LeadsDatabase.cs" />
     <Compile Include="Database\Models\Address.cs" />
     <Compile Include="Database\Models\ContactMethod.cs" />

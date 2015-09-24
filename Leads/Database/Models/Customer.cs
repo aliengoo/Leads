@@ -4,7 +4,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Leads.Database.Models
 {
-    public class Customer : ISubDocument
+	using MongoDB.Bson.Serialization.Options;
+
+	public class Customer : ISubDocument
     {
         [BsonRequired]
         public string FirstName { get; set; }
@@ -19,9 +21,11 @@ namespace Leads.Database.Models
         public IDictionary<string, Address> Addresses { get; set; }
 
         [BsonRequired]
-        public IDictionary<string, ContactMethod> ContactMethods { get; set; }
+		[BsonDictionaryOptions(DictionaryRepresentation.Document)]
+        public IDictionary<string, string> ContactMethods { get; set; }
 
-        public IDictionary<string, object> Meta { get; set; }
+		[BsonDictionaryOptions(DictionaryRepresentation.Document)]
+		public IDictionary<string, object> Meta { get; set; }
 
 		[BsonRequired]
 	    public string Id { get; set; }

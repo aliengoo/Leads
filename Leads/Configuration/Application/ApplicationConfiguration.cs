@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-
-namespace Leads.Configuration
+﻿namespace Leads.Configuration.Application
 {
-    public class ApplicationConfiguration : IApplicationConfiguration
+	using System;
+	using System.Collections.Generic;
+	using System.Configuration;
+
+	public class ApplicationConfiguration : IApplicationConfiguration
     {
         private IEnumerable<string> _corsOrigins;
 

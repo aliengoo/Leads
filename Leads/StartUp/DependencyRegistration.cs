@@ -4,7 +4,13 @@ using Unity.WebApi;
 
 namespace Leads.StartUp
 {
-    public class DependencyRegistration
+	using Leads.Configuration.Application;
+	using Leads.Database;
+	using Leads.Database.Document;
+	using Leads.Database.Document.Sub;
+	using Leads.Database.Models;
+
+	public class DependencyRegistration
     {
         public static void Register(HttpConfiguration config)
         {
@@ -15,6 +21,17 @@ namespace Leads.StartUp
 
             // TODO: Dependencies here
 
+			// configuration
+	        c.RegisterType<IApplicationConfiguration, ApplicationConfiguration>();
+
+			// database
+	        c.RegisterType<ILeadsDatabase, LeadsDatabase>();
+
+			// Collections and sub-document dependencies
+	        c.RegisterType<ILeads, Leads>();
+	        c.RegisterType<IDocumentCrud<Lead>, Leads>();
+	        c.RegisterType<ISubDocumentCrud<Lead, Note>, Notes>();
+	        c.RegisterType<ISubDocumentCrud<Lead, Customer>, Customers>();
         }
     }
 }

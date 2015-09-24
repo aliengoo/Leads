@@ -1,9 +1,9 @@
-﻿namespace Leads.Database.Collections
+﻿namespace Leads.Database.Document.Sub
 {
 	using System.Reflection;
 	using System.Threading.Tasks;
 
-	using Models;
+	using global::Leads.Database.Models;
 
 	public interface ISubDocumentCrud<TParentDoc, TDoc>
 		where TParentDoc : class, IDocument

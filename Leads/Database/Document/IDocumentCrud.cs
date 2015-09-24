@@ -1,8 +1,10 @@
-﻿namespace Leads.Database.Collections
+﻿namespace Leads.Database.Document
 {
+	using System.Collections.Generic;
 	using System.Threading.Tasks;
 
-	using Models;
+	using global::Leads.Database.Models;
+	using global::Leads.Pagination;
 
 	public interface IDocumentCrud<TDoc> where TDoc: IDocument
 	{
@@ -13,5 +15,7 @@
 		Task<TDoc> UpdateAsync(TDoc doc);
 
 		Task DeleteAsync(string id);
+
+		Task<Page> RetrieveAsync(IDictionary<string, object> filter, Page page);
 	}
 }

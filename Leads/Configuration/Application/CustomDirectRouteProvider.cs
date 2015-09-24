@@ -1,11 +1,10 @@
-﻿namespace Leads.Configuration
+﻿namespace Leads.Configuration.Application
 {
+	using System.Collections.Generic;
+	using System.Web.Http.Controllers;
+	using System.Web.Http.Routing;
 
-    using System.Collections.Generic;
-    using System.Web.Http.Controllers;
-    using System.Web.Http.Routing;
-
-    public class CustomDirectRouteProvider : DefaultDirectRouteProvider
+	public class CustomDirectRouteProvider : DefaultDirectRouteProvider
     {
         protected override IReadOnlyList<IDirectRouteFactory> GetActionRouteFactories(HttpActionDescriptor actionDescriptor)
         {

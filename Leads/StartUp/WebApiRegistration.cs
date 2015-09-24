@@ -4,7 +4,9 @@ using Owin;
 
 namespace Leads.StartUp
 {
-    public class WebApiRegistration
+	using Leads.Configuration.Application;
+
+	public class WebApiRegistration
     {
         public static void Register(IAppBuilder app, HttpConfiguration config)
         {

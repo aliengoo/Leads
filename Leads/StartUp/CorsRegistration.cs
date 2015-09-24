@@ -9,6 +9,8 @@ namespace Leads.StartUp
     using System.Web.Http;
     using System.Web.Http.Dependencies;
 
+    using Leads.Configuration.Application;
+
     using Microsoft.Owin.Cors;
     using Microsoft.Practices.Unity;
 

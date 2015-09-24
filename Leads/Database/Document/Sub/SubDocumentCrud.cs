@@ -1,4 +1,4 @@
-﻿namespace Leads.Database.Collections
+﻿namespace Leads.Database.Document.Sub
 {
 	using System;
 	using System.Collections.Generic;
@@ -6,13 +6,11 @@
 	using System.Reflection;
 	using System.Threading.Tasks;
 
-	using Configuration.Attributes;
-	using Exceptions;
-	using Helpers;
+	using global::Leads.Configuration.Attributes;
+	using global::Leads.Database.Models;
+	using global::Leads.Exceptions;
+	using global::Leads.Helpers;
 
-	using Models;
-
-	using MongoDB.Bson;
 	using MongoDB.Bson.Serialization.IdGenerators;
 	using MongoDB.Driver;
 
