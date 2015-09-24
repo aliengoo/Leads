@@ -22,7 +22,7 @@ namespace Leads.StartUp
             // TODO: Dependencies here
 
 			// configuration
-	        c.RegisterType<IApplicationConfiguration, ApplicationConfiguration>();
+	        c.RegisterType<IApplicationConfiguration, ApplicationConfiguration>(new InjectionConstructor("leads"));
 
 			// database
 	        c.RegisterType<ILeadsDatabase, LeadsDatabase>();

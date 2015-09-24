@@ -210,3 +210,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+Leads/wwwroot/assets/fontawesome-webfont.svg
+*.svg
+Leads/wwwroot/assets/vendor.css

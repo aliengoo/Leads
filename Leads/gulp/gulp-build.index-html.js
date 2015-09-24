@@ -10,6 +10,7 @@ var args = require("./gulp-config.command-line-args");
 
 var client = require("../package.json").workflow.client;
 var publicPaths = require("./gulp-config.public-paths");
+var reusableTasks = require("./gulp-build.reusable-tasks");
 
 function pathify(parentDir, fileName) {
   return path.join(parentDir.replace(publicPaths.root, ""), fileName).substr(1).replace("\\", "/");
@@ -30,7 +31,11 @@ gulp.task("index-html", function () {
     data.livereload = format('<script src="http://%s:35729/livereload.js?snipver=1"></script>', ip.address());
   }
 
+  console.log(publicPaths);
+
   return gulp.src(client.src.index.templateFileUri)
+    .pipe(reusableTasks.printTask())
+    .pipe(reusableTasks.plumberTask())
     .pipe(template(data))
     .pipe(rename("index.html"))
     .pipe(gulp.dest(publicPaths.root));

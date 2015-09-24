@@ -10,7 +10,8 @@ module leads {
       $stateProvider.state("leads", {
         url : "/leads",
         controller: LeadsController,
-        templateUrl: "leads/leads.html"
+        controllerAs: "vm",
+        templateUrl: "views/leads/leads.html"
       });
     }
   }

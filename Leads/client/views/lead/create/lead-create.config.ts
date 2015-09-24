@@ -11,7 +11,8 @@ module leads {
       $stateProvider.state("lead.create", {
         url: "/edit",
         controller: LeadCreateController,
-        controllerAs: "vm"
+        controllerAs: "vm",
+        templateUrl: "views/lead/edit/lead-edit.html"
       });
     }
   }
