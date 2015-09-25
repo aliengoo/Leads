@@ -3,7 +3,7 @@
 
 "use strict";
 
-module leads {
+module leads.views {
   export class LeadConfig {
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {

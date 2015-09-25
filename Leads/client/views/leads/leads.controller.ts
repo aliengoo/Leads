@@ -1,9 +1,13 @@
+///<reference path="../../components/components.module.ts"/>
 "use strict";
 
-module leads {
+import ILeadsService = leads.components.ILeadsService;
+
+module leads.views {
 
   export class LeadsController {
-    constructor() {
+    /* @ngInject */
+    constructor(leadsService: ILeadsService) {
 
     }
   }

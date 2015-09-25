@@ -18,7 +18,7 @@ namespace Leads.Database.Models
 
         public DateTime? BirthDate { get; set; }
 
-        public IEnumerable<Address> Addresses { get; set; }
+        public Address Address { get; set; }
 
         [BsonRequired]
 		[BsonDictionaryOptions(DictionaryRepresentation.Document)]

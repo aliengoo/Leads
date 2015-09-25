@@ -1,7 +1,7 @@
 ///<reference path="leads.controller.ts"/>
 "use strict";
 
-module leads {
+module leads.views {
   export class LeadsConfig {
 
     /* @ngInject */

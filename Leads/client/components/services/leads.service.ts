@@ -1,8 +1,12 @@
 ///<reference path="../../../typings/tsd.d.ts"/>
+///<reference path="../../models/models.d.ts"/>
 
 "use strict";
 
-module leads {
+import IPagedFilterRequest = leads.models.IPagedFilterRequest;
+import IPage = leads.models.IPage;
+
+module leads.components {
 
   export interface ILeadsService {
     retrieve(pagedFilterRequest: IPagedFilterRequest):angular.IPromise<IPage>;
@@ -10,6 +14,7 @@ module leads {
 
   export class LeadsService implements ILeadsService {
 
+    /* @ngInject */
     constructor(private $http: angular.IHttpService, private $q: angular.IQService) {
     }
 

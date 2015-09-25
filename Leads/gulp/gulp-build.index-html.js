@@ -31,8 +31,6 @@ gulp.task("index-html", function () {
     data.livereload = format('<script src="http://%s:35729/livereload.js?snipver=1"></script>', ip.address());
   }
 
-  console.log(publicPaths);
-
   return gulp.src(client.src.index.templateFileUri)
     .pipe(reusableTasks.printTask())
     .pipe(reusableTasks.plumberTask())

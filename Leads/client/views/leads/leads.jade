@@ -1,4 +1,24 @@
-.container-fluid
+navbar
+
+div.container.views.leads
+
   header
     h1 Leads
+
+  .row
+    .col-sm-12
+      table.table-hover.table
+        thead
+          tr
+            td ID
+            td Customer
+            td Status
+            td Created
+        tbody
+          tr(ng-repeat="lead in vm.leads")
+            td {{lead.id}}
+            td {{lead.customer | customerToString}}
+
+
+
 

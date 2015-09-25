@@ -43,7 +43,7 @@ gulp.task('default', ['index-html', 'app:styles', 'app', 'vendor'], function () 
 
       gulp.watch(path.join(client.src.js.root, glob), ['app']);
       gulp.watch(path.join(client.src.styles.root, glob), ['app:styles']);
-      gulp.watch(path.join(client.test.root, glob), ['app:test']);
+      gulp.watch(client.src.index.templateFileUri, ["index-html"]);
 
       helper.log("Watching for changes, and ready to reload...");
       helper.log("READY PLAYER ONE...");

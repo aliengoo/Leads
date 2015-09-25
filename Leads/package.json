@@ -18,7 +18,7 @@
           "outputFileName": "leads.js"
         },
         "styles": {
-          "root": "styles",
+          "root": "client/styles",
           "outputFileName": "leads.css"
         },
         "index": {

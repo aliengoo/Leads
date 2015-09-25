@@ -1,12 +1,7 @@
+///<reference path="lead.ts"/>
 "use strict";
 
-module leads {
-
-  export interface IPagedFilterRequest {
-    filter: any;
-    page: IPage
-  }
-
+module leads.models {
   export interface IPage {
     current?: number;
     totalItems?: number;

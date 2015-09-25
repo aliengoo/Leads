@@ -1,0 +1,14 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      // TODO
+      a(href="#").navbar-brand Leads
+
+    #leads-navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(ui-sref-active="active")
+          a(ui-sref="leads") Leads
+
+        li(ui-sref-active="active")
+          a(ui-sref="lead.create") Create lead
+

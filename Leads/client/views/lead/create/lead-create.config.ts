@@ -3,16 +3,16 @@
 ///<reference path="lead-create.controller.ts"/>
 "use strict";
 
-module leads {
+module leads.views {
   export class LeadCreateConfig {
 
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
       $stateProvider.state("lead.create", {
-        url: "/edit",
+        url: "/create",
         controller: LeadCreateController,
         controllerAs: "vm",
-        templateUrl: "views/lead/edit/lead-edit.html"
+        templateUrl: "views/lead/create/lead-create.html"
       });
     }
   }

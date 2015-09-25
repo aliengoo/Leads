@@ -14,7 +14,7 @@ namespace Leads.Database.Models
         public string Id { get; set; }
 
         [BsonRequired]
-        public List<Customer> Customers { get; set; }
+        public Customer Customer { get; set; }
 
         [BsonRequired]
         public DateTime Created { get; set; }

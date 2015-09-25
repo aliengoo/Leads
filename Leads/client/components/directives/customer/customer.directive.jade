@@ -1,0 +1,23 @@
+div(ng-form="customerForm").directive.customer
+  .col-sm-6
+    form-group
+      control-label First name
+      input(type="text" ng-model="customer.firstName" required)
+      
+    form-group
+      control-label Middle names
+      input(type="text" ng-model="customer.middleNames")
+
+    form-group
+      control-label Last name
+      input(type="text" ng-model="customer.lastName" required)
+
+    form-group
+      control-label Birth date
+      input(type="date" ng-model="customer.birthDate")
+
+  .col-sm-6
+    address(address="customer.address")
+
+
+
