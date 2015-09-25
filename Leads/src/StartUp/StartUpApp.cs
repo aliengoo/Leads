@@ -23,6 +23,8 @@ namespace Leads.StartUp
 
             CorsRegistration.Register(app, config);
 
+			StaticContentRegistration.Register(app);
+
 #if (DEBUG)
             config.EnableSystemDiagnosticsTracing();
 #endif

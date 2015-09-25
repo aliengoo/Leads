@@ -187,6 +187,7 @@
     <Compile Include="src\Configuration\Application\CustomDirectRouteProvider.cs" />
     <Compile Include="src\Configuration\Application\IApplicationConfiguration.cs" />
     <Compile Include="src\Controllers\CustomersController.cs" />
+    <Compile Include="src\Controllers\HelloController.cs" />
     <Compile Include="src\Controllers\InterestsController.cs" />
     <Compile Include="src\Controllers\NotesController.cs" />
     <Compile Include="src\Controllers\SubDocumentController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="src\StartUp\DependencyRegistration.cs" />
     <Compile Include="src\StartUp\JsonRegistration.cs" />
     <Compile Include="src\StartUp\StartUpApp.cs" />
+    <Compile Include="src\StartUp\StaticContentRegistration.cs" />
     <Compile Include="src\StartUp\WebApiRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
