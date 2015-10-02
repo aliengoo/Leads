@@ -161,8 +161,6 @@
     <Content Include="gulp\gulp-config.filters.js" />
     <Content Include="gulp\gulp-config.npm.js" />
     <Content Include="gulp\gulp-config.public-paths.js" />
-    <Content Include="gulp\gulp-deploy.js" />
-    <Content Include="gulp\gulp-serve.js" />
     <Content Include="gulp\notification-images\error.png" />
     <Content Include="gulp\notification-images\failed.png" />
     <Content Include="gulp\notification-images\success.png" />

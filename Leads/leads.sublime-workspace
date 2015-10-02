@@ -1,0 +1,509 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Conta",
+				"ContactUsAdminUrl"
+			],
+			[
+				"ContactUSAd",
+				"ContactUsAdminUrl"
+			],
+			[
+				"Con",
+				"ContactUsQuoteToEmail"
+			],
+			[
+				"se",
+				"semmerson"
+			],
+			[
+				"Contact",
+				"ContactUsQuoteToEmail"
+			],
+			[
+				"contactUsAp",
+				"ContactUsApiUrl"
+			],
+			[
+				"pa",
+				"payment-validation"
+			],
+			[
+				"debu",
+				"debugInfoProvider"
+			],
+			[
+				"deb",
+				"debugInfoEnabled"
+			],
+			[
+				"de",
+				"debugInfoEnabled"
+			],
+			[
+				"debug",
+				"_debugInfoEnabled"
+			],
+			[
+				"pr",
+				"productConfigurationManager"
+			],
+			[
+				"get",
+				"getEnvironment"
+			],
+			[
+				"Produc",
+				"ProductConfigurationManager"
+			],
+			[
+				"new",
+				"newProductConfigurationId"
+			],
+			[
+				"Product",
+				"ProductConfigurations"
+			],
+			[
+				"cam",
+				"campaignUnloader"
+			],
+			[
+				"lo",
+				"loadCampaignsIntoTest"
+			],
+			[
+				"load",
+				"loadCampaignsIntoProduction"
+			],
+			[
+				"forEach",
+				"forEachCampaign"
+			],
+			[
+				"Add",
+				"AddNewCampaigns"
+			],
+			[
+				"sav",
+				"saveRuntimeConfiguration"
+			],
+			[
+				"was",
+				"wasUpdated"
+			],
+			[
+				"RuntimeConfgi",
+				"RuntimeConfiguration"
+			],
+			[
+				"run",
+				"runtimeConfiguration"
+			],
+			[
+				"Pri",
+				"Printf	n int, err error ƒ"
+			],
+			[
+				"has",
+				"hasExpired"
+			],
+			[
+				"date",
+				"dateHelper"
+			],
+			[
+				"login",
+				"loginResult"
+			],
+			[
+				"logi",
+				"loginResult"
+			],
+			[
+				"nav",
+				"navigation"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"last_filter": "error",
+		"selected_items":
+		[
+			[
+				"error",
+				"TypeScript: Show Error List"
+			],
+			[
+				"error list",
+				"TypeScript: Show Error List"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"beau",
+				"HTMLBeautify"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"inden",
+				"Indent XML"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"power",
+				"Set Syntax: PowerShell"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"save ",
+				"File: Save All"
+			],
+			[
+				"note",
+				"Notes: List…"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"tasks",
+				"Tasks: New document"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"insa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 368.0
+	},
+	"console":
+	{
+		"height": 434.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/src/github.com/aliengoo/Leads/Leads/client/components/directives/sidebar/sidebar.service.ts",
+		"/C/src/github.com/aliengoo/Leads/Leads/client/components/directives/sidebar/sidebar.directive.ts",
+		"/C/Users/gbunter/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/src/github.com/aliengoo/Leads/.vs/config/applicationhost.config",
+		"/C/src/github.com/aliengoo/Leads/Leads/package.json",
+		"/U/my-machine-path/old-version.text",
+		"/C/temp/arg-test.sh",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/commit-push-contents-calculator.sh",
+		"/U/jira-issues/bow/bow-957/bow-957.js",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/template-contactus-single.php",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/template-contactus-ng.php",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/js/apps/contact-us/app.js",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/footer.php",
+		"/E/Downloads/htaccess",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/nginx.conf",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/environment",
+		"/C/temp/node-deploy-test/id_rsa.pubxxx",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/.bashrc 2",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/.bashrc",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/payment-validation",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/.bash_profile",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/authorized_keys",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/sshd_config",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/ssh_config",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/hosts",
+		"/C/Users/gbunter/AppData/Local/Temp/fz3temp-1/default",
+		"/U/.pm2/logs/server-out-0.log",
+		"/U/.pm2/pm2.log",
+		"/C/src/stash/Mustaine/push-to-octopus.ps1",
+		"/C/src/stash/Mustaine/push-mustaine.ps1",
+		"/C/src/stash/Mustaine/push-mustaine-proxy.ps1",
+		"/U/jira-issues/bow/bow-952/product-configuration-manager.js",
+		"/U/jira-issues/bow/bow-952/myplans-isatopup.js",
+		"/C/temp/apply_perms.sh",
+		"/U/jira-issues/bow/bow-951/runtime-configuration-revert.js",
+		"/U/jira-issues/bow/bow-951/new-campaigns.js",
+		"/U/jira-issues/bow/bow-951/env.js",
+		"/C/Users/gbunter/AppData/Roaming/Sublime Text 3/Packages/User/JavascriptBeautify.sublime-settings",
+		"/C/Users/gbunter/AppData/Roaming/Sublime Text 3/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+		"/C/src/github/jspm-angular/package.json",
+		"/U/projects/pantone/my-plans/website/my-plans.todo",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/js/apps/my-plans/components/logged-in/buy-online/nisa/nisa-product-details/nisa-product-details-single.jade",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/js/apps/my-plans/components/my-plans.components.module.js",
+		"/C/xampp/htdocs/website/wp-content/themes/ta/js/apps/my-plans/components/logged-in/buy-online/nisa/nisa-product-details/nisa-product-details-regular-single.jade",
+		"/C/xampp/htdocs/website/.gitignore",
+		"/C/Users/gbunter/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/gbunter/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"C:\\Windows\\",
+			"C:\\Program Files (x86)\\",
+			"C:\\Program Files\\",
+			"C:\\Program Files",
+			"C:\\ProgramData",
+			"blockUI",
+			"sessioncam",
+			"session_cam",
+			"session",
+			"function get_header",
+			"get_header(",
+			"function get_header",
+			"get_header",
+			"<APPNAME>",
+			"boot2",
+			"newProductConfigurationId",
+			"addNewCampaigns",
+			"AddNewCampaigns",
+			"newCampaigns",
+			"existingRecord",
+			";",
+			"var ",
+			" =",
+			"loginService"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"%windir%\\",
+			"%ProgramFiles(x86)%\\",
+			"%ProgramFiles%\\",
+			"%ProgramFiles%",
+			"%ProgramData%"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o://C:\\Program Files\\Sublime Text 3":
+	{
+		"height": 144.0
+	},
+	"output.9o://C:\\src\\bitbucket\\go-projects\\hello-go":
+	{
+		"height": 322.0
+	},
+	"output.9o://C:\\src\\bitbucket\\go-projects\\hello-go\\src":
+	{
+		"height": 365.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.errorlist":
+	{
+		"height": 364.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.jotter":
+	{
+		"height": 148.0
+	},
+	"pinned_build_system": "Packages/GoSublime/GoSublime.sublime-build",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"client\\components\\directives\\sidebar\\sidebar.directive.ts"
+			],
+			[
+				"sidebar",
+				"client\\components\\directives\\sidebar\\sidebar.directive.ts"
+			],
+			[
+				"sservice",
+				"client\\components\\directives\\sidebar\\sidebar.service.ts"
+			],
+			[
+				"side",
+				"client\\components\\directives\\sidebar\\sidebar.directive.ts"
+			],
+			[
+				"app.js",
+				"wp-content\\themes\\ta\\js\\apps\\contact-us\\app.js"
+			],
+			[
+				"footer.p",
+				"wp-content\\themes\\ta\\footer.php"
+			],
+			[
+				"user-",
+				"server\\models\\user\\lib\\user-login.js"
+			],
+			[
+				"nisa-product",
+				"ta\\js\\apps\\my-plans\\components\\logged-in\\buy-online\\nisa\\nisa-product-details\\nisa-product-details-single.jade"
+			],
+			[
+				"regular-single",
+				"ta\\js\\apps\\my-plans\\components\\logged-in\\buy-online\\nisa\\nisa-product-details\\nisa-product-details-regular-single.jade"
+			],
+			[
+				".ig",
+				".gitignore"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

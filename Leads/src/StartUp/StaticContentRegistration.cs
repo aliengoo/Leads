@@ -23,6 +23,12 @@
 			};
 
 			app.UseFileServer(options);
-		} 
+
+			// TODO: Remember to add these virtual directories
+			/*
+                <virtualDirectory path="/js" physicalPath="C:\src\github.com\aliengoo\Leads\Leads\wwwroot\js" />
+                <virtualDirectory path="/assets" physicalPath="C:\src\github.com\aliengoo\Leads\Leads\wwwroot\assets" />
+			*/
+		}
 	}
 }

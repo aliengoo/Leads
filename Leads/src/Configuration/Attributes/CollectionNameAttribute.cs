@@ -3,8 +3,6 @@
 	using System;
 	using System.Linq;
 
-	using Leads.Database.Models;
-
 	[AttributeUsage(AttributeTargets.Class)]
 	public class CollectionNameAttribute : Attribute
 	{

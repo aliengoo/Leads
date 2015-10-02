@@ -4,7 +4,7 @@
 ///<reference path="lead\create\lead-create.config.ts"/>
 ///<reference path="../models/models.d.ts"/>
 ///<reference path="../components/components.module.ts"/>
-
+///<reference path="sandbox\sandbox.config.ts"/>
 
 
 "use strict";
@@ -22,6 +22,7 @@ module leads.views {
     .config(LeadsConfig)
     .config(LeadConfig)
     .config(LeadEditConfig)
-    .config(LeadCreateConfig);
+    .config(LeadCreateConfig)
+    .config(SandboxConfig);
 
 }
