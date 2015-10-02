@@ -30,6 +30,7 @@
         "./client/components/components.module.ts",
         "./client/components/directives/address-type/address-type.directive.ts",
         "./client/components/directives/address/address.directive.ts",
+        "./client/components/directives/clearfix/clearfix.directive.ts",
         "./client/components/directives/customer/customer.directive.ts",
         "./client/components/directives/interests/interests.directive.ts",
         "./client/components/directives/sidebar/sidebar-state.service.ts",

@@ -8,6 +8,8 @@
 ///<reference path="bootstrap\form-group\form-group.directive.ts"/>
 ///<reference path="bootstrap\control-label\control-label.directive.ts"/>
 ///<reference path="directives\sidebar\sidebar.directive.ts"/>
+///<reference path="directives\sidebar\sidebar-state.service.ts"/>
+///<reference path="directives\clearfix\clearfix.directive.ts"/>
 
 "use strict";
 
@@ -20,11 +22,14 @@ module leads.components {
     .directive("formGroup", formGroup)
     .directive("controlLabel", controlLabel)
     .directive("addressType", addressType)
-    .directive("sidebar", sideBar);
+    .directive("sidebar", sideBar)
+    .directive("clearfix", clearfix);
 
   // filters
   leadComponents.filter("customerToString", customerToString);
 
   // services
-  leadComponents.service("leadsService", LeadsService);
+  leadComponents
+    .service("leadsService", LeadsService)
+    .service("sidebarStateService", SidebarStateService);
 }

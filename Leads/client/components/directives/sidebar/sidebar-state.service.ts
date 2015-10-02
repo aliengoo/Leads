@@ -2,11 +2,11 @@
 
 module leads.components {
 
-  export interface ISidebarState {
+  export interface ISidebarStateService {
     isOpen(open?: boolean): boolean;
   }
 
-  export class SidebarState implements ISidebarState {
+  export class SidebarStateService implements ISidebarStateService {
 
     private key: string = "sidebar-state";
 

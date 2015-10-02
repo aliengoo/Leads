@@ -6,11 +6,13 @@
 module leads.components {
 
   interface ISidebarScope extends angular.IScope {
-    isOpen(open?: boolean): boolean;
+    toggle():void;
+
+    open: boolean;
   }
 
   /* @ngInject */
-  export function sideBar(sidebarState: ISidebarState): angular.IDirective {
+  export function sideBar(sidebarStateService: ISidebarStateService, $window: angular.IWindowService): angular.IDirective {
     return {
       restrict: "E",
       templateUrl: "components/directives/sidebar/sidebar.directive.html",
@@ -18,6 +20,13 @@ module leads.components {
     };
 
     function link(scope: ISidebarScope, element: angular.IAugmentedJQuery) {
+
+      scope.open = true;
+
+      scope.toggle = (): void => {
+        scope.open = !scope.open;
+      };
+
 
     }
   }
