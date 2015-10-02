@@ -1,9 +1,12 @@
+$transitionTime: 0.5s;
+
 .sidebar {
-  width: 200px;
+  width: 250px;
   position:fixed;
-  background-color: #F6F4F4;
+  background-color: #7F1079;
+  color: white;
   padding:10px;
-  margin:10px;
+  margin:0px;
 
   a {
     text-decoration: none;
@@ -11,15 +14,15 @@
   }
 
   &.open {
-    transition: all 1s;
+    transition: left $transitionTime;
     top: 0;
     left: 0;
   }
 
   &.closed {
-    transition: all 1s;
+    transition: left $transitionTime;
     top:0;
-    left: -180px;
+    left: -200px;
   }
 
   header {
@@ -29,17 +32,26 @@
     a {
       float: right;
       padding-top: 10px;
+      font-size:2em;
     }
   }
 
   ul {
     list-style: none;
+    font-size: 1.3em;
 
     li {
       padding-top: 10px;
+      transition: opacity $transitionTime;
+      opacity: 0.8;
 
       &:hover {
-        background-color: whitesmoke;
+        opacity: 1;
+        &:after {
+          float:right;
+          font-family: "icomoon";
+          content: "\ed73";
+        }
       }
 
       a {

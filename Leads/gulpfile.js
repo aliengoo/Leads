@@ -41,8 +41,14 @@ gulp.task('default', ['index-html', 'app:styles', 'app', 'vendor'], function () 
         start: true
       });
 
-      gulp.watch(path.join(client.src.js.root, glob), ['app']);
-      gulp.watch(path.join(client.src.styles.root, glob), ['app:styles']);
+      var stylesGlob = [path.join(client.src.styles.root, "**/*.scss")];
+      var codeGlob = [
+        path.join(client.src.js.root, "**/*.ts"),
+        path.join(client.src.js.root, "**/*.jade")
+      ];
+
+      gulp.watch(codeGlob, ['app']);
+      gulp.watch(stylesGlob, ['app:styles']);
       gulp.watch(client.src.index.templateFileUri, ["index-html"]);
 
       helper.log("Watching for changes, and ready to reload...");

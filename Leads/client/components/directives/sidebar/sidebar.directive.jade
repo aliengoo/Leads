@@ -1,11 +1,7 @@
 nav(ng-class="{'open': open, 'closed': !open}").sidebar
   header
-    h4 Navigation
+    div(data-title-html)
     a(href='' ng-click="toggle()")
       i(ng-class="{'icon-arrow-right': !open, 'icon-arrow-left': open}")
   clearfix
-  ul.list-unstyled
-    li
-      a(href="#") Lead
-    li
-      a(href="#") Lead3
+  div(data-content-html)

@@ -31,5 +31,6 @@ module leads.components {
   // services
   leadComponents
     .service("leadsService", LeadsService)
-    .service("sidebarStateService", SidebarStateService);
+    .service("sidebarStateService", SidebarStateService)
+    .service("windowResizeService", WindowResizeService);
 }
