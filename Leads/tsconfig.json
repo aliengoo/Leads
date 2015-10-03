@@ -38,6 +38,7 @@
         "./client/components/filters/customer-to-string.filter.ts",
         "./client/components/services/lead.service.ts",
         "./client/components/services/leads.service.ts",
+        "./client/components/services/window-resize.service.ts",
         "./client/models/address.ts",
         "./client/models/customer.ts",
         "./client/models/interest.ts",

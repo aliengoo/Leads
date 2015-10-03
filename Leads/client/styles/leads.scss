@@ -1,5 +1,4 @@
-@import "partials/sidebar";
-
-body {
-
-}
+@import 'partials/common';
+@import 'partials/_sidebar.directive';
+@import 'partials/_flex-container.directive';
+@import 'partials/main-content.directive';

@@ -10,6 +10,8 @@
 ///<reference path="directives\sidebar\sidebar.directive.ts"/>
 ///<reference path="directives\sidebar\sidebar-state.service.ts"/>
 ///<reference path="directives\clearfix\clearfix.directive.ts"/>
+///<reference path="directives\flex-container\flex-container.directive.ts"/>
+///<reference path="directives\main-content\main-content.directive.ts"/>
 
 "use strict";
 
@@ -23,7 +25,9 @@ module leads.components {
     .directive("controlLabel", controlLabel)
     .directive("addressType", addressType)
     .directive("sidebar", sideBar)
-    .directive("clearfix", clearfix);
+    .directive("clearfix", clearfix)
+    .directive("mainContent", mainContent)
+    .directive("flexContainer", flexContainer);
 
   // filters
   leadComponents.filter("customerToString", customerToString);

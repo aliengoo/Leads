@@ -1,0 +1,86 @@
+$sidebar-transition-time: .5s;
+
+$sidebar-background-color: #000000;
+$sidebar-color: #fff;
+$sidebar-margin: 0;
+$sidebar-padding: 10px;
+
+@mixin sidebarLink {
+  color: $sidebar-color;
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $sidebar-color;
+  }
+}
+
+// specifically for child elements, not the main sidebar
+@mixin sidebarChildrenClosed {
+}
+
+.sidebar {
+  background-color: $sidebar-background-color;
+  color: $sidebar-color;
+  margin: $sidebar-margin;
+  padding: $sidebar-padding;
+  flex-direction: row;
+}
+
+.sidebar-toggle {
+  @include sidebarLink;
+  float: right;
+  font-size: 2em;
+  padding-top: 10px;
+  &:after {
+    content: '\ec59';
+    float: right;
+    font-family: 'icomoon';
+  }
+}
+
+.sidebar-header {
+  :first-child {
+    float: left;
+  }
+}
+
+.sidebar-header-closed {
+  @include sidebarChildrenClosed;
+}
+
+.sidebar-content {
+  :first-child {
+    margin-top: 20px;
+  }
+}
+
+.sidebar-content-closed {
+  @include sidebarChildrenClosed;
+}
+
+.sidebar-list {
+  font-size: 1.3em;
+  list-style: none;
+  padding-left:0px;
+}
+
+.sidebar-list-item {
+  opacity: .8;
+  padding-top: 10px;
+  transition: opacity $sidebar-transition-time;
+
+  &:hover {
+    opacity: 1;
+
+    &:after {
+      content: '\ed73';
+      float: right;
+      font-family: 'icomoon';
+    }
+  }
+
+  a {
+    @include sidebarLink;
+    margin: 2px;
+  }
+}
