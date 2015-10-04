@@ -66,6 +66,7 @@ var cssTaskFn = function (concatenatedFileName) {
 
   var cssFilter = lp.filter(filters.css);
   return lazypipe()
+    .pipe(printTask)
     .pipe(plumberTask)
     .pipe(function () {
       return cssFilter;
@@ -84,6 +85,7 @@ var sassTaskFn = function () {
   var scssFilter = lp.filter(filters.scss);
 
   return lazypipe()
+    .pipe(printTask)
     .pipe(plumberTask)
     .pipe(function () {
       return scssFilter;

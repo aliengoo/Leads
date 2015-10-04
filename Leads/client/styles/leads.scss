@@ -1,15 +1,14 @@
-// leads.scss
 /* inject:imports */
 /* endinject */
 
 //@import "partials/rendering";
 //@import 'partials/common';
-//@import 'partials/sidebar.directive';
-//@import 'partials/flex-container.directive';
-//@import 'partials/main-content.directive';
-//@import 'partials/help-block.directive';
-//@import "partials/leads-sidebar.directive";
-//@import "partials/customer.directive";
-//@import "partials/address.directive";
-//@import "partials/address-type.directive";
-//@import "partials/lead-details.directive";
+//@import '../components/directives/sidebar/_sidebar.directive';
+//@import '../components/directives/flex-container/_flex-container.directive';
+//@import '../components/directives/main-content/_main-content.directive';
+//@import '../components/bootstrap/help-block/_help-block.directive';
+//@import "../views/leads/directives/leads-sidebar/_leads-sidebar.directive";
+//@import "../components/directives/customer/_customer.directive";
+//@import "../components/directives/address/_address.directive";
+//@import "../components/directives/address-type/_address-type.directive";
+//@import "../views/lead/directives/lead-details/_lead-details.directive";

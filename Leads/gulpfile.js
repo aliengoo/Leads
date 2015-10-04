@@ -19,10 +19,6 @@ var publicPaths = require("./gulp/gulp-config.public-paths");
 
 var client = require("./package.json").workflow.client;
 
-var glob = "**/*";
-
-helper.log(format("Running on %s v%s", os.platform(), os.release()));
-
 gulp.task('default', ['index-html', 'app:styles', 'app', 'vendor'], function () {
 
   if (!args.production) {
@@ -41,7 +37,7 @@ gulp.task('default', ['index-html', 'app:styles', 'app', 'vendor'], function () 
         start: true
       });
 
-      var stylesGlob = [path.join(client.src.styles.root, "**/*.scss")];
+      var stylesGlob = [path.join(client.src.root, "**/*.scss")];
       var codeGlob = [
         path.join(client.src.js.root, "**/*.ts"),
         path.join(client.src.js.root, "**/*.jade")
