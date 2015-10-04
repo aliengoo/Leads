@@ -1,8 +1,6 @@
-
-
 "use strict";
 
-module leads.views {
+module leads.views.lead {
 
   export class LeadController {
     constructor() {

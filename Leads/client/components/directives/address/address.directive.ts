@@ -4,20 +4,20 @@
 
 "use strict";
 
-module leads.views {
+module leads.components {
 
   interface IAddressScope extends angular.IScope {
     address?: leads.models.IAddress
   }
 
   /* @ngInject */
-  export function addressDirective() : angular.IDirective {
+  export function address() : angular.IDirective {
     return {
       restrict: "E",
       scope: {
         address: "="
       },
-      templateUrl: "views/lead/components/address/address.html",
+      templateUrl: "components/directives/address/address.directive.html",
       link: link
     };
 

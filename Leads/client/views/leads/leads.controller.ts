@@ -3,7 +3,7 @@
 
 import ILeadsService = leads.components.ILeadsService;
 
-module leads.views {
+module leads.views.leads {
 
   export class LeadsController {
     /* @ngInject */

@@ -1,0 +1,11 @@
+.leads-sidebar-list-item {
+  @extend .sidebar-list-item;
+  > {
+    &:before {
+      content: '\ed58';
+      padding-right: 5px;
+      font-size: 0.8em;
+      font-family: 'icomoon';
+    }
+  }
+}

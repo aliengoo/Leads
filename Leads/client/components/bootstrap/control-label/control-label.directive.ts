@@ -5,6 +5,7 @@ module leads.components {
 
     return {
       restrict: "E",
+      replace: true,
       link: (scope: angular.IScope, element: angular.IAugmentedJQuery) => {
         var html = `<label class="control-label">${element.text()}</label>`;
         element.html(html);

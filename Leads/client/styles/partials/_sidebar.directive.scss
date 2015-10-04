@@ -1,9 +1,11 @@
 $sidebar-transition-time: .5s;
 
-$sidebar-background-color: #000000;
-$sidebar-color: #fff;
+$sidebar-background-color: #3c3b87;
+$sidebar-color: #ddddf2;
 $sidebar-margin: 0;
 $sidebar-padding: 10px;
+
+$sidebar-list-item-transition-time: .1s;
 
 @mixin sidebarLink {
   color: $sidebar-color;
@@ -65,13 +67,10 @@ $sidebar-padding: 10px;
 }
 
 .sidebar-list-item {
-  opacity: .8;
   padding-top: 10px;
-  transition: opacity $sidebar-transition-time;
-
+  transition: all $sidebar-list-item-transition-time ease-in-out;
   &:hover {
-    opacity: 1;
-
+    transform: scale(1.01);
     &:after {
       content: '\ed73';
       float: right;

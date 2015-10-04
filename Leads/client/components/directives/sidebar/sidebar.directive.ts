@@ -16,8 +16,7 @@ module leads.components {
   /* @ngInject */
   export function sideBar(
     windowResizeService:IWindowResizeService,
-    $window:angular.IWindowService,
-    $compile:angular.ICompileService):angular.IDirective {
+    $window:angular.IWindowService):angular.IDirective {
     return {
       restrict: "E",
       templateUrl: "components/directives/sidebar/sidebar.directive.html",

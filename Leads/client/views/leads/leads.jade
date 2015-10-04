@@ -1,12 +1,11 @@
-navbar
-
-div.container.views.leads
-
-  header
-    h1 Leads
-
-  .row
-    .col-sm-12
+div.views.leads
+  flex-container
+    
+    leads-sidebar
+      
+    main-content
+      header
+        h1 Current Leads
       table.table-hover.table
         thead
           tr
@@ -18,7 +17,3 @@ div.container.views.leads
           tr(ng-repeat="lead in vm.leads")
             td {{lead.id}}
             td {{lead.customer | customerToString}}
-
-
-
-

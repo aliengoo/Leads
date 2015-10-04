@@ -48,6 +48,21 @@ gulp.task("clean:app:styles", function (done) {
  ------------------ PROCESS STYLE TASK ------------------
  */
 
+gulp.task("app:auto-import", function () {
+  // pipe the target file to the
+  var mainFile = path.join(client.src.styles.root, "leads.scss");
+  var imports = ["!" + mainFile, path.join(client.src.styles.root, "**/*.scss")];
+
+  return gulp.src(mainFile)
+    .pipe(lp.inject(imports), {
+      starttag: '/* inject:imports */',
+      endtag: '/* endinject */',
+      transform: function(filePath){
+        return '@import ".' + filePath + '";';
+      }
+    });
+
+});
 
 
 gulp.task("app:styles", ["clean:app:styles"], function () {

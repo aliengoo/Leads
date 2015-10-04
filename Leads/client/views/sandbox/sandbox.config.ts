@@ -1,5 +1,5 @@
-///<reference path="..\..\..\typings\tsd.d.ts"/>
 ///<reference path="sandbox.controller.ts"/>
+///<reference path="..\..\..\typings\angular-ui-router\angular-ui-router.d.ts"/>
 "use strict";
 
 module leads.views {

@@ -1,7 +1,8 @@
 ///<reference path="leads.controller.ts"/>
+///<reference path="..\..\..\typings\angular-ui-router\angular-ui-router.d.ts"/>
 "use strict";
 
-module leads.views {
+module leads.views.leads {
   export class LeadsConfig {
 
     /* @ngInject */

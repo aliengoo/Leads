@@ -1,23 +1,23 @@
 section(ng-form="addressForm").directive.address
   form-group
     control-label Line 1
-    input(ng-model="address.line1" name="line1" required)
+    input(ng-model="address.line1" name="line1" required).address-line
 
   form-group
     control-label Line 2
-    input(ng-model="address.line2" name="line2" maxlength="40")
+    input(ng-model="address.line2" name="line2" maxlength="40").address-line
 
   form-group
     control-label Line 2
-    input(ng-model="address.line2" name="line3" maxlength="40")
+    input(ng-model="address.line2" name="line3" maxlength="40").address-line
 
   form-group
     control-label Town
-    input(ng-model="address.town" name="town" maxlength="40")
+    input(ng-model="address.town" name="town" maxlength="40").address-town
 
   form-group
     control-label Postcode
-    input(ng-model="address.postcode" name="postcode" maxlength="8").postcode
+    input(ng-model="address.postcode" name="postcode" maxlength="8").address-postcode
 
   address-type(address="address")
 
