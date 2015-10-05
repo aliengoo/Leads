@@ -1,6 +1,6 @@
 "use strict";
 
-namespace sandbox {
+module sandbox {
   export class SandboxController {
     constructor() {
 

@@ -1,7 +1,7 @@
 ///<reference path="customer.ts"/>
 "use strict";
 
-namespace customer {
+module customer {
 
   export function customerToString(): Function {
     return (customer: ICustomer): string => {

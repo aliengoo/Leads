@@ -3,7 +3,7 @@
 
 "use strict";
 
-namespace customer {
+module customer {
 
   interface IAddressScope extends angular.IScope {
     address?: IAddress

@@ -5,7 +5,7 @@
 
 "use strict";
 
-namespace sandbox {
+module sandbox {
   var mod = angular.module("leads.views.sandbox", [
     "ui.router",
     "leads.templates", "bootstrap", "customer", "lead"

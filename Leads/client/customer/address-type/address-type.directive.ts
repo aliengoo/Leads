@@ -1,7 +1,7 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
 "use strict";
 
-namespace customer {
+module customer {
   export function addressType() : angular.IDirective {
 
     return {

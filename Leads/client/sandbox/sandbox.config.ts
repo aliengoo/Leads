@@ -2,7 +2,7 @@
 ///<reference path="../../typings/angular-ui-router/angular-ui-router.d.ts"/>
 "use strict";
 
-namespace sandbox {
+module sandbox {
 
   export class SandboxConfig {
     /* @ngInject */

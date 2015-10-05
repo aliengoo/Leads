@@ -1,6 +1,6 @@
 "use strict";
 
-namespace customer {
+module customer {
   export function customer(): angular.IDirective {
     return {
       restrict: "E",
