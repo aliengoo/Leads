@@ -66,6 +66,7 @@
       "./client/views/sandbox/sandbox.controller.ts",
       "./client/views/sandbox/sandbox.module.ts",
       "./client/views/views.module.ts",
-      "client/views/lead/directives/lead-details/lead-details.directives.ts"
+      "./client/views/lead/directives/lead-details/lead-details.directives.ts",
+      "client/components/directives/lead-details/lead-details.directive.ts"
     ]
 }

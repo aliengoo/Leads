@@ -1,0 +1,18 @@
+div.create
+  header
+    h1 Lead create
+
+  .col-sm-6
+    header
+      h3 Customer details
+    customer(customer="vm.customer")
+
+    header
+      h3 Customer address
+    address(address="vm.customer.address")
+
+  .col-sm-6
+    header
+      h3 Lead details
+
+    lead-details(lead="vm.lead")

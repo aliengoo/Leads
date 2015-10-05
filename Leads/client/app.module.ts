@@ -1,8 +1,7 @@
 ///<reference path="../typings/tsd.d.ts"/>
 ///<reference path="app.config.ts"/>
-///<reference path="models\models.d.ts"/>
-///<reference path="components\components.module.ts"/>
-///<reference path="views\views.module.ts"/>
+///<reference path="lead/lead.module.ts"/>
+
 
 "use strict";
 
@@ -12,7 +11,7 @@ module leads {
     "ngAria",
     "ngAnimate",
     "ui.router",
-    "leads.views"
+    "lead"
   ];
 
   angular.module("leads", dependencies)
