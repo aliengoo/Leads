@@ -7,9 +7,10 @@
 ///<reference path="lead-details/lead-details.directive.ts"/>
 ///<reference path="interests/interests.directive.ts"/>
 ///<reference path="list/list.config.ts"/>
-///<reference path="services/leads.service.ts"/>
-///<reference path="services/lead.service.ts"/>
-///<reference path="list-sidebar/list-sidebar.directive.ts"/>
+///<reference path="list/list-sidebar/list-sidebar.directive.ts"/>
+///<reference path="list/list-table/list-table.directive.ts"/>
+///<reference path="list/list.service.ts"/>
+///<reference path="lead.service.ts"/>
 
 module lead {
 
@@ -21,11 +22,12 @@ module lead {
       "ui",
       "customer"
     ])
-    .service("leadsService", LeadsService)
     .service("leadService", LeadService)
+    .service("listService", ListService)
     .directive("interests", interests)
     .directive("leadDetails", leadDetails)
     .directive("listSidebar", listSidebar)
+    .directive("listTable", listTable)
     .directive("searchInput", searchInput)
     .config(LeadConfig)
     .config(LeadCreateConfig)
