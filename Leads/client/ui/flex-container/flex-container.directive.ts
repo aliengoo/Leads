@@ -1,12 +1,13 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
-"use strict";
 
 module ui {
+  "use strict";
+
   export function flexContainer(): angular.IDirective {
     return {
       restrict: "E",
-      transclude: true,
-      template: "<div class='flex-container' ng-transclude=''></div>"
+      template: "<div class='flex-container' ng-transclude=''></div>",
+      transclude: true
     };
   }
 }

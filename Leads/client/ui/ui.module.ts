@@ -3,13 +3,20 @@
 ///<reference path="main-content/main-content.directive.ts"/>
 ///<reference path="window-resize/window-resize.service.ts"/>
 ///<reference path="sidebar/sidebar.directive.ts"/>
-"use strict";
+///<reference path="control-label/control-label.directive.ts"/>
+///<reference path="help-block/help-block.directive.ts"/>
+///<reference path="form-group/form-group.directive.ts"/>
 
 module ui {
+  "use strict";
+
   angular.module("ui", [])
     .directive("clearfix", clearfix)
     .directive("flexContainer", flexContainer)
     .directive("mainContent", mainContent)
     .directive("sidebar", sidebar)
+    .directive("controlLabel", controlLabel)
+    .directive("helpBlock", helpBlock)
+    .directive("formGroup", formGroup)
     .service("windowResizeService", WindowResizeService);
 }

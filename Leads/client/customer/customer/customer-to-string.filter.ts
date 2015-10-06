@@ -1,7 +1,7 @@
 ///<reference path="customer.ts"/>
-"use strict";
 
 module customer {
+  "use strict";
 
   export function customerToString(): Function {
     return (customer: ICustomer): string => {
@@ -9,6 +9,7 @@ module customer {
         return "?";
       }
       return `${customer.lastName}, ${customer.firstName}`;
-    }
+    };
   }
 }
+

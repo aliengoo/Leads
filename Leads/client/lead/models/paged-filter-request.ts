@@ -1,9 +1,10 @@
 ///<reference path="page.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export interface IPagedFilterRequest {
     filter: any;
-    page: IPage
+    page: IPage;
   }
 }

@@ -1,16 +1,16 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
-"use strict";
 
 module customer {
-  export function addressType() : angular.IDirective {
+  "use strict";
+
+  export function addressType(): angular.IDirective {
 
     return {
       restrict: "E",
       scope: {
         address: "="
       },
-      template:
-        `<form-group>
+      template: `<form-group>
           <control-label>Type</control-label>
           <select name="addressType" ng-model="address.type" class="address-type">
             <option value="mailing">Mailing</option>

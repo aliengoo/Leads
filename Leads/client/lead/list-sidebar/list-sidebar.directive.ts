@@ -1,7 +1,8 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export function listSidebar(): angular.IDirective {
     return {
       restrict: "E",

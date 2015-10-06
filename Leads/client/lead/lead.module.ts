@@ -1,4 +1,3 @@
-///<reference path="../bootstrap/bootstrap.module.ts"/>
 ///<reference path="../customer/customer.module.ts"/>
 ///<reference path="../ui/ui.module.ts"/>
 ///<reference path="lead.config.ts"/>
@@ -10,18 +9,18 @@
 ///<reference path="list/list.config.ts"/>
 ///<reference path="services/leads.service.ts"/>
 ///<reference path="services/lead.service.ts"/>
-
-
-"use strict";
+///<reference path="list-sidebar/list-sidebar.directive.ts"/>
 
 module lead {
+
+  "use strict";
+
   angular.module("lead", [
-    'ui.router',
-    'leads.templates',
-    'bootstrap',
-    'customer',
-    'ui'
-  ])
+      "ui.router",
+      "leads.templates",
+      "ui",
+      "customer"
+    ])
     .service("leadsService", LeadsService)
     .service("leadService", LeadService)
     .directive("interests", interests)
@@ -32,5 +31,4 @@ module lead {
     .config(LeadCreateConfig)
     .config(LeadEditConfig)
     .config(ListConfig);
-
 }

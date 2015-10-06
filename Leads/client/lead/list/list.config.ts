@@ -1,18 +1,19 @@
 ///<reference path="..\..\..\typings\angular-ui-router\angular-ui-router.d.ts"/>
 ///<reference path="list.controller.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export class ListConfig {
 
     /* @ngInject */
-    constructor($stateProvider: angular.ui.IStateProvider){
+    constructor($stateProvider: angular.ui.IStateProvider) {
 
-      $stateProvider.state("leads", {
-        url : "/leads",
+      $stateProvider.state("lead.list", {
         controller: ListController,
         controllerAs: "vm",
-        templateUrl: "leads/list/list.html"
+        templateUrl: "lead/list/list.html",
+        url: "/list"
       });
     }
   }

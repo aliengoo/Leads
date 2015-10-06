@@ -1,19 +1,18 @@
-div.views.leads
-  flex-container
-    
-    leads-sidebar
-      
-    main-content
-      header
-        h1 Current Leads
-      table.table-hover.table
-        thead
-          tr
-            td ID
-            td Customer
-            td Status
-            td Created
-        tbody
-          tr(ng-repeat="lead in vm.leads")
-            td {{lead.id}}
-            td {{lead.customer | customerToString}}
+flex-container
+
+  list-sidebar
+
+  main-content
+    header
+      h1 Current Leads
+    table.table-hover.table
+      thead
+        tr
+          td ID
+          td Customer
+          td Status
+          td Created
+      tbody
+        tr(ng-repeat="lead in vm.leads")
+          td {{lead.id}}
+          td {{lead.customer | customerToString}}

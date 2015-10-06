@@ -1,10 +1,6 @@
-"use strict";
-
 module lead {
+  "use strict";
 
   export class LeadController {
-    constructor() {
-
-    }
   }
 }

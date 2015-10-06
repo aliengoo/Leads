@@ -1,13 +1,14 @@
 ///<reference path="interest.ts"/>
 ///<reference path="../../customer/customer/customer.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export interface ILead {
     id: string;
-    customers?: customer.ICustomer
+    customers?: customer.ICustomer;
     meta?: any;
     created?: Date;
-    interests?: IInterest[]
+    interests?: IInterest[];
   }
 }

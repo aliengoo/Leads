@@ -1,7 +1,8 @@
 ///<reference path="lead.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export interface IPage {
     current?: number;
     totalItems?: number;
@@ -10,6 +11,6 @@ module lead {
     size?: number;
     sortColumn?: string;
     sortOrder?: number;
-    results?: ILead[]
+    results?: ILead[];
   }
 }

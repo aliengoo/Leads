@@ -1,6 +1,7 @@
-"use strict";
 
 module customer {
+  "use strict";
+
   export function customer(): angular.IDirective {
     return {
       restrict: "E",

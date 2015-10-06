@@ -1,14 +1,13 @@
 ///<reference path="../typings/tsd.d.ts"/>
 
-"use strict";
-
 module leads {
+  "use strict";
+
   export class AppConfig {
 
     /* @ngInject */
-    constructor($urlRouterProvider: angular.ui.IUrlRouterProvider){
-
-      $urlRouterProvider.otherwise("/leads");
+    constructor($urlRouterProvider: angular.ui.IUrlRouterProvider) {
+      $urlRouterProvider.otherwise("/lead/list");
     }
   }
 }

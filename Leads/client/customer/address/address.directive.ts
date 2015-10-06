@@ -1,16 +1,15 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
 ///<reference path="address.ts"/>
 
-"use strict";
-
 module customer {
+  "use strict";
 
   interface IAddressScope extends angular.IScope {
-    address?: IAddress
+    address?: IAddress;
   }
 
   /* @ngInject */
-  export function address() : angular.IDirective {
+  export function address(): angular.IDirective {
     return {
       restrict: "E",
       scope: {

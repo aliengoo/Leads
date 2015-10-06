@@ -1,12 +1,13 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
+
   export function leadDetails(): angular.IDirective {
     return {
       restrict: "E",
       scope: {
-        lead: '='
+        lead: "="
       },
       templateUrl: "lead/lead-details/lead-details.directive.html"
     };

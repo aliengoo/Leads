@@ -2,12 +2,10 @@
 ///<reference path="app.config.ts"/>
 ///<reference path="lead/lead.module.ts"/>
 
-
-"use strict";
-
 module leads {
+  "use strict";
 
-  var dependencies:Array<string> = [
+  var dependencies: Array<string> = [
     "ngAria",
     "ngAnimate",
     "ui.router",

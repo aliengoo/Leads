@@ -93,7 +93,13 @@ gulp.task("clean:app:js", function (done) {
 /* BUILD TYPESCRIPT */
 gulp.task('app:ts', ['clean:app:js'], function () {
 
-  var typescriptFilesGlob = [path.join(client.src.js.root, "**/*.ts")];
+  var typescriptFilesGlob = [
+    path.join(client.src.js.root, "**/*.ts")
+  ];
+
+  if (!args.fake) {
+    path.join(client.src.js.root, "!**/*.fake.ts");
+  }
 
   return gulp.src(typescriptFilesGlob)
     .pipe(lp.plumber(npm.plumber))

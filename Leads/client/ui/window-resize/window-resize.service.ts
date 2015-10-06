@@ -1,61 +1,60 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
-"use strict";
 
 module ui {
+  "use strict";
 
   export interface IWindowSize {
-    w: number;
     h: number;
+    w: number;
   }
 
   export interface IWindowResizeFunc {
-    (windowSize:IWindowSize): void
+    (windowSize: IWindowSize): void;
   }
 
   export interface IWindowResizeService {
-    registerObserver(name:string, windowResizeFunc:IWindowResizeFunc): void;
-    deregisterObserver(name:string): void;
+    registerObserver(name: string, windowResizeFunc: IWindowResizeFunc): void;
+    deregisterObserver(name: string): void;
   }
 
   export class WindowResizeService implements IWindowResizeService {
 
-    private observers:any;
-    private w:angular.IAugmentedJQuery;
-    private bound:boolean;
-    private throttleTimeout:angular.IPromise<any>;
-    private lastWindowSize:IWindowSize;
+    private observers: any;
+    private w: angular.IAugmentedJQuery;
+    private bound: boolean;
+    private throttleTimeout: angular.IPromise<any>;
 
     /* @ngInject */
-    constructor(private $window:angular.IWindowService, private $timeout:angular.ITimeoutService) {
+    constructor(private $window: angular.IWindowService, private $timeout: angular.ITimeoutService) {
       this.w = angular.element($window);
       this.observers = {};
     }
 
-    registerObserver(name:string, windowResizeFunc:IWindowResizeFunc):void {
+    public registerObserver(name: string, windowResizeFunc: IWindowResizeFunc): void {
 
-      var me = this;
+      var me: WindowResizeService = this;
 
-      if(!me.bound) {
-        me.w.bind("resize", ():void => {
+      if (!me.bound) {
+        me.w.bind("resize", (): void => {
 
-          if(me.throttleTimeout) {
+          if (me.throttleTimeout) {
             me.$timeout.cancel(me.throttleTimeout);
           }
 
-          me.throttleTimeout = me.$timeout(():void => {
+          me.throttleTimeout = me.$timeout(
+            (): void => {
 
-            var windowSize:IWindowSize = {
-              w: $(me.$window).width(),
-              h: $(me.$window).height()
+            var windowSize: IWindowSize = {
+              h: $(me.$window).height(),
+              w: $(me.$window).width()
             };
 
-            Object.keys(me.observers).forEach((observer):void => {
+            Object.keys(me.observers).forEach((observer: string): void => {
               me.observers[observer](windowSize);
             });
 
             me.$timeout.cancel(me.throttleTimeout);
             me.throttleTimeout = undefined;
-
           }, 500);
         });
 
@@ -65,7 +64,7 @@ module ui {
       me.observers[name] = windowResizeFunc;
     }
 
-    deregisterObserver(name:string):void {
+    public deregisterObserver(name: string): void {
       delete this.observers[name];
     }
   }

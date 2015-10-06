@@ -1,58 +1,62 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
 ///<reference path="../window-resize/window-resize.service.ts"/>
 
-"use strict";
-
 module ui {
+  "use strict";
 
   interface ISidebarScope extends angular.IScope {
-    title:string;
+    title: string;
     open: boolean;
 
-    toggle():void;
+    toggle(): void;
+  }
+
+  interface ISidebarAttributes extends angular.IAttributes {
+    width?: string;
+    hiddenWidth?: string;
   }
 
   /* @ngInject */
-  export function sidebar(
-    windowResizeService:IWindowResizeService,
-    $window:angular.IWindowService):angular.IDirective {
+  export function sidebar(windowResizeService: IWindowResizeService,
+                          $window: angular.IWindowService): angular.IDirective {
     return {
+      link: link,
       restrict: "E",
-      templateUrl: "components/directives/sidebar/sidebar.directive.html",
-      transclude: true,
-      link: link
+      templateUrl: "ui/sidebar/sidebar.directive.html",
+      transclude: true
     };
 
-    function link(
-      scope:ISidebarScope,
-      element:angular.IAugmentedJQuery,
-      attributes:angular.IAttributes,
-      ctrl:any,
-      transclude:angular.ITranscludeFunction) {
+    function link(scope: ISidebarScope,
+                  element: angular.IAugmentedJQuery,
+                  attributes: ISidebarAttributes,
+                  controller: any,
+                  transclude: angular.ITranscludeFunction): void {
 
       // styles
-      var duration = 0.3;
-      var interval = "+=0.01";
-      var width = parseInt(attributes["width"] || 250);
-      var hiddenWidth = parseInt(attributes["hiddenWidth"] || 47);
+      var duration: number = 0.3;
+      var interval: string = "+=0.01";
+      var width: number = parseInt(attributes.width || "250", 10);
+      var hiddenWidth: number = parseInt(attributes.hiddenWidth || "47", 10);
 
       // elements
-      var $nav = $(element).find("nav");
+      var $nav: JQuery = find("nav");
+      var $sidebarElements: JQuery = find("[data-sidebar]");
+      var $sidebarHeader: JQuery = find("[data-sidebar-header]");
+      var $sidebarContent: JQuery = find("[data-sidebar-content]");
+
       $nav.css("width", width);
 
-      var $sidebarElements = $(element).find("[data-sidebar]");
-      var $sidebarHeader = $(element).find("[data-sidebar-header]");
-      var $sidebarContent = $(element).find("[data-sidebar-content]");
-
-
       // import elements form original declaration
-      transclude(scope, function (clone:angular.IAugmentedJQuery) {
-        angular.forEach(clone, function(cloneChild){
-          if (cloneChild.localName === "sidebar-header") {
-            $sidebarHeader.append(cloneChild);
-          }
+      transclude(scope, function (clone: angular.IAugmentedJQuery): void {
+        angular.forEach(clone, function (cloneChild: angular.IAugmentedJQuery): void {
 
-          if (cloneChild.localName === "sidebar-content") {
+          /* tslint:disable no-string-literal*/
+          var tag: string = cloneChild["localName"];
+          /* tslint:enable no-string-literal*/
+
+          if (tag === "sidebar-header") {
+            $sidebarHeader.append(cloneChild);
+          } else if (tag === "sidebar-content") {
             $sidebarContent.append(cloneChild);
           }
         });
@@ -61,20 +65,20 @@ module ui {
       // manage resizing of sidebar (height changes)
 
       // not happy about this, because there is a dependency on the .sidebar margin settings (10px);
-      var artificialMargin = 0;
+      var artificialMargin: number = 0;
 
       // set initial size
       $nav.css("height", $($window).height() - artificialMargin);
 
       // watch for size changes
-      windowResizeService.registerObserver("sidebar", (windowSize:IWindowSize) => {
+      windowResizeService.registerObserver("sidebar", (windowSize: IWindowSize) => {
         $nav.css("height", windowSize.h - artificialMargin);
       });
 
       // toggling
       scope.open = true;
 
-      scope.toggle = ():void => {
+      scope.toggle = (): void => {
         scope.open = !scope.open;
 
         if (scope.open) {
@@ -84,32 +88,50 @@ module ui {
         }
       };
 
-      scope.$on("$destroy", ():void => {
+      scope.$on("$destroy", (): void => {
         windowResizeService.deregisterObserver("sidebar");
       });
 
-      function opening() {
-        var tl = new TimelineMax();
+      function opening(): void {
+        var tl: TimelineMax = new TimelineMax();
 
-        tl.to($nav, duration, {
-          width: width
-        }, interval);
+        tl.to(
+          $nav,
+          duration,
+          {
+            width: width
+          },
+          interval);
 
-        tl.to($sidebarElements, duration, {
-          autoAlpha: 1, display: 'block'
-        });
+        tl.to(
+          $sidebarElements,
+          duration,
+          {
+            autoAlpha: 1, display: "block"
+          });
 
       }
 
-      function closing() {
-        var tl = new TimelineMax();
-        tl.to($sidebarElements, duration, {
-          autoAlpha: 0, display: 'none'
-        }, interval);
+      function closing(): void {
+        var tl: TimelineMax = new TimelineMax();
+        tl.to(
+          $sidebarElements,
+          duration,
+          {
+            autoAlpha: 0, display: "none"
+          },
+          interval);
 
-        tl.to($nav, duration, {
-          width: hiddenWidth
-        });
+        tl.to(
+          $nav,
+          duration,
+          {
+            width: hiddenWidth
+          });
+      }
+
+      function find(selector: string): JQuery {
+        return $(element).find(selector);
       }
     }
   }

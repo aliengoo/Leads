@@ -1,12 +1,12 @@
 ///<reference path="../../customer/customer/customer.ts"/>
 ///<reference path="../models/lead.ts"/>
-"use strict";
 
 module lead {
+  "use strict";
 
   export class LeadCreateController {
-    lead: ILead;
-    customer: customer.ICustomer;
+    public customer: customer.ICustomer;
+    public lead: ILead;
 
     constructor() {
       this.lead = <ILead>{};

@@ -1,8 +1,9 @@
 /// <reference path="../../../typings/tsd.d.ts"/>
 
-"use strict";
 
 module ui {
+  "use strict";
+
   export function clearfix(): angular.IDirective {
     return {
       restrict: "E",

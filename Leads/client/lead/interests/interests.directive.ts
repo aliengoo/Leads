@@ -1,10 +1,10 @@
 ///<reference path="../../../typings/angularjs/angular.d.ts"/>
 
-"use strict";
 
 module lead {
+  "use strict";
 
-  export function interests() : angular.IDirective {
+  export function interests(): angular.IDirective {
     return {
       restrict: "E",
       scope: {

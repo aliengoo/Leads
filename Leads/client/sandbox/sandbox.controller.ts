@@ -1,9 +1,7 @@
-"use strict";
 
 module sandbox {
-  export class SandboxController {
-    constructor() {
+  "use strict";
 
-    }
+  export class SandboxController {
   }
 }
