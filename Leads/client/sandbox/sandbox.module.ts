@@ -4,7 +4,7 @@
 module sandbox {
   "use strict";
 
-  angular.module("leads.views.sandbox", [
+  angular.module("sandbox", [
     "ui.router",
     "leads.templates", "customer", "lead", "ui"
   ]).config(SandboxConfig);

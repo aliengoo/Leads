@@ -14,7 +14,7 @@ module customer {
             <first-name customer="customer"></first-name>
             <middle-names customer="customer"></middle-names>
             <last-name customer="customer"></last-name>
-            <last-name customer="customer"></last-name>
+            <birth-date customer="customer"></birth-date>
           </div>
         `
     };

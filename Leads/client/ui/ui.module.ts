@@ -6,6 +6,7 @@
 ///<reference path="control-label/control-label.directive.ts"/>
 ///<reference path="help-block/help-block.directive.ts"/>
 ///<reference path="form-group/form-group.directive.ts"/>
+///<reference path="date-selector/date-selector.directive.ts"/>
 
 module ui {
   "use strict";
@@ -18,5 +19,6 @@ module ui {
     .directive("controlLabel", controlLabel)
     .directive("helpBlock", helpBlock)
     .directive("formGroup", formGroup)
+    .directive("dateSelector", dateSelector)
     .service("windowResizeService", WindowResizeService);
 }
