@@ -15,7 +15,29 @@ module lead {
       scope: {
         leads: "="
       },
-      templateUrl: "lead/list/list-table/list-table.directive.html"
+      template:
+        `
+          <div class="list-table">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <td>ID</td>
+                  <td>Customer</td>
+                  <td>Status</td>
+                  <td>Created</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="lead in leads">
+                  <td>{{lead.id}}</td>
+                  <td>{{lead.customer | customerToString}}</td>
+                  <td>{{lead.status}}</td>
+                  <td>{{lead.created}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `
     };
 
     function link(scope: IListTableScope, element: angular.IAugmentedJQuery): void {

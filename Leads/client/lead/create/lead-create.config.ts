@@ -6,6 +6,7 @@ module lead {
 
   export class LeadCreateConfig {
 
+
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
       $stateProvider.state("lead.create", <angular.ui.IState>{

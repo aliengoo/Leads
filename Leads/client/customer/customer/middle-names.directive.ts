@@ -5,6 +5,7 @@ module customer {
   export function middleNames(): angular.IDirective {
     return {
       replace: true,
+      require: "^formGroup",
       restrict: "E",
       scope: {
         customer: "="
@@ -13,7 +14,14 @@ module customer {
         `<div>
           <form-group>
             <control-label>Middle names</control-label>
-            <input type="text" name="middleNames" ng-model="customer.middleNames" maxlength="40" class="customer-middle-names">
+            <input
+              type="text"
+              name="middleNames"
+              ng-model="customer.middleNames"
+              ng-model-options="{ debounce: 500 }"
+              maxlength="40"
+              class="customer-middle-names"
+              form-group-error>
           </form-group>
         </div>`
     };

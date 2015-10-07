@@ -5,14 +5,10 @@ module ui {
 
   export function controlLabel(): angular.IDirective {
     return {
-      link: link,
       replace: true,
-      restrict: "E"
+      restrict: "E",
+      template: `<label class="control-label" ng-transclude=""></label>`,
+      transclude: true
     };
-
-    function link(scope: angular.IScope, element: angular.IAugmentedJQuery): void {
-      var html: any = `<label class="control-label">${element.text()}</label>`;
-      element.html(html);
-    }
   }
 }

@@ -5,6 +5,7 @@ module customer {
   export function lastName(): angular.IDirective {
     return {
       replace: true,
+      require: "^formGroup",
       restrict: "E",
       scope: {
         customer: "="
@@ -13,7 +14,15 @@ module customer {
         `<div>
           <form-group>
             <control-label>Last name</control-label>
-            <input type="text" name="lastName" ng-model="customer.lastName" class="customer-last-name" maxlength="40" required>
+            <input
+              type="text"
+              name="lastName"
+              ng-model="customer.lastName"
+              ng-model-options="{ debounce: 500 }"
+              class="customer-last-name"
+              maxlength="40"
+              required
+              form-group-error>
           </form-group>
         </div>`
     };

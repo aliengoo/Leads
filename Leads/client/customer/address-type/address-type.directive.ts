@@ -10,7 +10,8 @@ module customer {
       scope: {
         address: "="
       },
-      template: `<form-group>
+      template: `
+        <form-group>
           <control-label>Type</control-label>
           <select name="addressType" ng-model="address.type" class="address-type">
             <option value="mailing">Mailing</option>
