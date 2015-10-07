@@ -10,7 +10,7 @@ module customer {
         customer: "="
       },
       template:
-        `<div>
+        `<ng-messages>
           <form-group>
             <control-label>First name</control-label>
             <input
@@ -21,9 +21,11 @@ module customer {
               class="customer-first-name"
               required
               maxlength="40">
-              <div ng-messages="ngModel.$error">
-                <div ng-message="required">Required</div>
-              </div>
+              <help-block>
+                <ng-messages for="ngModel.$error">
+                  <ng-message when="required" class="error">Required</div>
+                </ng-messages>
+              </help-block>
           </form-group>
         </div>`
     };

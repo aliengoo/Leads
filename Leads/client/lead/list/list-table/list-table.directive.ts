@@ -41,7 +41,7 @@ module lead {
     };
 
     function link(scope: IListTableScope, element: angular.IAugmentedJQuery): void {
-      console.log("list-table ready");
+
     }
   }
 }
