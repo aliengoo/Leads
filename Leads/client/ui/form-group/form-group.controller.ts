@@ -4,7 +4,7 @@ module ui {
 
   export interface IFormGroupController {
     scope: IFormGroupScope;
-    setNgModel(ngModel: angular.INgModelController): angular.INgModelController;
+    linkToParent(element: angular.IAugmentedJQuery, ngModel: angular.INgModelController): void;
   }
 
   export class FormGroupController implements IFormGroupController {
@@ -14,38 +14,45 @@ module ui {
     private ngModelWatch: Function;
 
     /* @ngInject */
-    constructor($scope: IFormGroupScope) {
+    constructor($scope: IFormGroupScope, private $timeout: angular.ITimeoutService) {
       this.scope = $scope;
     }
 
-    public setNgModel(ngModel: angular.INgModelController): angular.INgModelController {
+    public linkToParent(element: angular.IAugmentedJQuery, ngModel: angular.INgModelController): void {
 
-      // clean up previous scope
-      if (this.ngModelWatch) {
-        this.ngModelWatch();
+      var me: FormGroupController = this;
+
+      function deferredLinkToParent(): void {
+        // clean up previous scope
+        if (me.ngModelWatch) {
+          me.ngModelWatch();
+        }
+
+        me.scope.element = element;
+        me.scope.ngModel = ngModel;
+
+        me.ngModelWatch = me.scope.$watch((): any => {
+
+          // when pristine, don't apply any styling
+          if (me.scope.ngModel.$pristine) {
+            return null;
+          }
+
+          // don't style when empty and not required
+          if (!me.scope.ngModel.$error.required && me.scope.ngModel.$isEmpty(me.scope.ngModel.$modelValue)) {
+            return null;
+          }
+
+          // otherwise express validity
+          return me.scope.ngModel.$invalid;
+        }, (invalid?: boolean): void => {
+          me.scope.childValidity = invalid;
+        });
       }
 
-      this.scope.ngModel = ngModel;
-
-      this.ngModelWatch = this.scope.$watch((): any => {
-
-        // when pristine, don't apply any styling
-        if (this.scope.ngModel.$pristine) {
-          return null;
-        }
-
-        // don't style when empty and not required
-        if (!this.scope.ngModel.$error.required && this.scope.ngModel.$isEmpty(this.scope.ngModel.$modelValue)) {
-          return null;
-        }
-
-        // otherwise express validity
-        return this.scope.ngModel.$invalid;
-      }, (invalid?: boolean): void => {
-        this.scope.childValidity = invalid;
-      });
-
-      return ngModel;
+      // defer.  deferredLinkToParent shouldn't run until other sync code has completed,
+      // namely all the directive compilation
+      this.$timeout(deferredLinkToParent);
     };
   }
 }

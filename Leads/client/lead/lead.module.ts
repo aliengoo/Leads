@@ -5,12 +5,14 @@
 ///<reference path="edit/lead-edit.config.ts"/>
 ///<reference path="search-input/search-input.directive.ts"/>
 ///<reference path="lead-details/lead-details.directive.ts"/>
-///<reference path="interests/interests.directive.ts"/>
 ///<reference path="list/list.config.ts"/>
 ///<reference path="list/list-sidebar/list-sidebar.directive.ts"/>
 ///<reference path="list/list-table/list-table.directive.ts"/>
 ///<reference path="list/list.service.ts"/>
 ///<reference path="lead.service.ts"/>
+///<reference path="lead-details/lead-due-date.directive.ts"/>
+///<reference path="lead-details/lead-interests.directive.ts"/>
+///<reference path="lead-details/lead-notes.directive.ts"/>
 
 module lead {
 
@@ -24,7 +26,9 @@ module lead {
     ])
     .service("leadService", LeadService)
     .service("listService", ListService)
-    .directive("interests", interests)
+    .directive("leadDueDate", leadDueDate)
+    .directive("leadInterests", leadInterests)
+    .directive("leadNotes", leadNotes)
     .directive("leadDetails", leadDetails)
     .directive("listSidebar", listSidebar)
     .directive("listTable", listTable)

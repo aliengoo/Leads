@@ -4,13 +4,12 @@ module lead {
 
   export function leadNotes(): angular.IDirective {
     return {
-      require: "^formGroup",
       restrict: "E",
       scope: {
         lead: "="
       },
-      template: `
-        <div>
+      template:
+        `<div>
           <form-group>
               <control-label>Notes</control-label>
               <textarea

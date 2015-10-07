@@ -4,7 +4,6 @@ module lead {
 
   export function leadInterests(): angular.IDirective {
     return {
-      require: "^formGroup",
       restrict: "E",
       scope: {
         lead: "="
@@ -22,7 +21,6 @@ module lead {
                 ng-model-options="{ debounce: 500 }"
                 class="lead-details-interests"
                 required
-                form-group-error
                 >
           </form-group>
         </div>

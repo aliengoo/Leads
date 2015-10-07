@@ -5,11 +5,13 @@
 module ui {
   "use strict";
 
-  export function formGroup(): angular.IDirective {
+  /* @ngInject */
+  export function formGroup($log: angular.ILogService): angular.IDirective {
     return {
       controller: FormGroupController,
       link: link,
       replace: true,
+      require: "formGroup",
       restrict: "E",
       template: `
         <div
@@ -20,8 +22,33 @@ module ui {
       transclude: true
     };
 
-    function link(scope: IFormGroupScope, element: angular.IAugmentedJQuery): void {
-      $(element).find("input, select, textarea").addClass("form-control");
+    function link(scope: IFormGroupScope,
+                  element: angular.IAugmentedJQuery,
+                  attributes: angular.IAttributes,
+                  formGroupController: IFormGroupController): void {
+
+      var targets: JQuery = $(element).find("input, select, textarea");
+
+      if (targets.length === 0) {
+        return;
+      }
+
+      if (targets.length > 1) {
+        $log.error("Sorry, form-group can only accommodate one input, select or textarea.");
+        return;
+      }
+
+      var ngTarget: angular.IAugmentedJQuery = angular.element(targets[0]);
+      ngTarget.addClass("form-control");
+
+      var ngModel: angular.INgModelController = ngTarget.controller("ngModel");
+
+      if (angular.isUndefined(ngModel)) {
+        $log.error("There was not ng-model controller available");
+        return;
+      }
+
+      formGroupController.linkToParent(ngTarget, ngModel);
     }
   }
 }

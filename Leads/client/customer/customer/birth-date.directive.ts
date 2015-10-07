@@ -5,7 +5,6 @@ module customer {
   export function birthDate(): angular.IDirective {
     return {
       replace: true,
-      require: "^formGroup",
       restrict: "E",
       scope: {
         customer: "="
@@ -18,8 +17,7 @@ module customer {
               type="date"
               name="birthDate"
               ng-model="customer.birthDate"
-              class="customer-birth-date"
-              form-group-error>
+              class="customer-birth-date">
           </form-group>
         </div>`
     };

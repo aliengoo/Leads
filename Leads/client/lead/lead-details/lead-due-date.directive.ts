@@ -4,7 +4,6 @@ module lead {
 
   export function leadDueDate(): angular.IDirective {
     return {
-      require: "^formGroup",
       restrict: "E",
       scope: {
         lead: "="
@@ -22,8 +21,7 @@ module lead {
                 ng-model-options="{ debounce: 500 }"
                 class="lead-details-due-date"
                 required
-                form-group-error
-              >
+                >
             </form-group>
         </div>
         `
