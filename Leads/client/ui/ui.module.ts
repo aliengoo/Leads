@@ -8,11 +8,25 @@
 ///<reference path="help-block/help-block.directive.ts"/>
 ///<reference path="form-group/form-group.directive.ts"/>
 ///<reference path="date-selector/date-selector.directive.ts"/>
+///<reference path="key-codes/key-code-info.service.ts"/>
+///<reference path="limit-chars/limit-chars-options.service.ts"/>
+///<reference path="limit-chars/limit-chars.directive.ts"/>
+///<reference path="key-codes/key-codes.ts"/>
+///<reference path="key-codes/special-key-codes.ts"/>
+///<reference path="key-codes/modifier-key-codes.ts"/>
+///<reference path="key-codes/numeric-key-codes.ts"/>
+///<reference path="key-codes/letter-key-codes.ts"/>
 
 module ui {
   "use strict";
 
-  angular.module("ui", ["ngMessages"])
+  angular.module("ui", ["ngMessages", "ngAnimate"])
+    .constant("keyCodes", KeyCodes)
+    .constant("specialKeyCodes", specialKeyCodes())
+    .constant("modifierKeyCodes", modifierKeyCodes())
+    .constant("numericKeyCodes", numericKeyCodes())
+    .constant("letterKeyCodes", letterKeyCodes())
+
     .directive("clearfix", clearfix)
     .directive("flexContainer", flexContainer)
     .directive("mainContent", mainContent)
@@ -20,5 +34,9 @@ module ui {
     .directive("controlLabel", controlLabel)
     .directive("helpBlock", helpBlock)
     .directive("formGroup", formGroup)
+    .directive("limitChars", limitChars)
+
+    .service("keyCodeInfoService", KeyCodeInfoService)
+    .service("limitCharsOptionsService", LimitCharsOptionsService)
     .service("windowResizeService", WindowResizeService);
 }

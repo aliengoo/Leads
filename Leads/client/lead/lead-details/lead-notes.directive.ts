@@ -10,17 +10,17 @@ module lead {
       },
       template:
         `<div>
-          <form-group>
-              <control-label>Notes</control-label>
-              <textarea
-                name="notes"
-                cols="30"
-                rows="10"
-                ng-model="lead.notes"
-                ng-model-options="{ debounce: 500 }"
-                class="lead-details-notes">
-              </textarea>
-            </form-group>
+          <form-group observe>
+            <control-label>Notes</control-label>
+            <textarea
+              name="notes"
+              cols="30"
+              rows="10"
+              ng-model="lead.notes"
+              ng-model-options="{ debounce: 500 }"
+              class="lead-details-notes">
+            </textarea>
+          </form-group>
         </div>
         `
     };

@@ -1,0 +1,39 @@
+@mixin help-block-animation {
+  ng-messages {
+    transition: .5s linear all;
+
+    &.ng-active {
+      opacity: 1;
+    }
+
+    &.ng-inactive {
+      opacity: 0;
+    }
+  }
+}
+
+.help-block-directive  {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: .8em;
+  @include help-block-animation;
+}
+
+.has-error {
+  .help-block-directive {
+    color: #a94442;
+  }
+}
+
+.has-success {
+  .help-block-directive {
+    color: #3c763d;
+  }
+}
+
+.has-warning {
+  .help-block-directive {
+    color: #8a6d3b;
+  }
+}

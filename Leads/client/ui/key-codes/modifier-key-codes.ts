@@ -3,21 +3,23 @@
 
 module ui {
   "use strict";
-  angular.module("ui").constant("modifierKeyCodes", [
-    KeyCodes.alt,
-    KeyCodes.backspace,
-    KeyCodes.ctrl,
-    KeyCodes.del,
-    KeyCodes.downArrow,
-    KeyCodes.end,
-    KeyCodes.home,
-    KeyCodes.insert,
-    KeyCodes.leftArrow,
-    KeyCodes.pageDown,
-    KeyCodes.pageUp,
-    KeyCodes.rightArrow,
-    KeyCodes.shift,
-    KeyCodes.tab,
-    KeyCodes.upArrow
-  ]);
+  export function modifierKeyCodes(): Array<number> {
+    return [
+      KeyCodes.alt,
+      KeyCodes.backspace,
+      KeyCodes.ctrl,
+      KeyCodes.del,
+      KeyCodes.downArrow,
+      KeyCodes.end,
+      KeyCodes.home,
+      KeyCodes.insert,
+      KeyCodes.leftArrow,
+      KeyCodes.pageDown,
+      KeyCodes.pageUp,
+      KeyCodes.rightArrow,
+      KeyCodes.shift,
+      KeyCodes.tab,
+      KeyCodes.upArrow
+    ];
+  }
 }

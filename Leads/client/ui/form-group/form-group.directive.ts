@@ -5,18 +5,18 @@
 module ui {
   "use strict";
 
+
   /* @ngInject */
   export function formGroup($log: angular.ILogService): angular.IDirective {
     return {
+      bindToController: true,
       controller: FormGroupController,
       link: link,
-      replace: true,
       require: "formGroup",
       restrict: "E",
       template: `
         <div
           class="form-group"
-          ng-class="{'has-error': childValidity === true, 'has-success': childValidity === false}"
           ng-transclude>
         </div>`,
       transclude: true
@@ -41,14 +41,10 @@ module ui {
       var ngTarget: angular.IAugmentedJQuery = angular.element(targets[0]);
       ngTarget.addClass("form-control");
 
-      var ngModel: angular.INgModelController = ngTarget.controller("ngModel");
-
-      if (angular.isUndefined(ngModel)) {
-        $log.error("There was not ng-model controller available");
-        return;
+      // when decorate
+      if (element[0].hasAttribute("observe")) {
+        formGroupController.observe(ngTarget);
       }
-
-      formGroupController.linkToParent(ngTarget, ngModel);
     }
   }
 }

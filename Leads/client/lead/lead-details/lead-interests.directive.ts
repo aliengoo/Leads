@@ -10,7 +10,7 @@ module lead {
       },
       template: `
         <div>
-          <form-group>
+          <form-group observe>
               <control-label>
                 Interests
               </control-label>

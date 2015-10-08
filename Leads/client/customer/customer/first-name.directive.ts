@@ -9,9 +9,9 @@ module customer {
       scope: {
         customer: "="
       },
-      template:
-        `<ng-messages>
-          <form-group>
+      template: `
+        <div>
+          <form-group observe>
             <control-label>First name</control-label>
             <input
               type="text"
@@ -23,9 +23,11 @@ module customer {
               maxlength="40">
               <help-block>
                 <ng-messages for="ngModel.$error">
-                  <ng-message when="required" class="error">Required</div>
+                  <ng-message when="required">Required</ng-message>
+                  <ng-message when="maxlength">Too long</ng-message>
                 </ng-messages>
               </help-block>
+
           </form-group>
         </div>`
     };

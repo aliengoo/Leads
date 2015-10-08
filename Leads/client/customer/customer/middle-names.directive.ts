@@ -11,7 +11,7 @@ module customer {
       },
       template:
         `<div>
-          <form-group>
+          <form-group observe>
             <control-label>Middle names</control-label>
             <input
               type="text"
