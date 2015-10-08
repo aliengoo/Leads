@@ -9,7 +9,6 @@ module ui {
   /* @ngInject */
   export function formGroup($log: angular.ILogService): angular.IDirective {
     return {
-      bindToController: true,
       controller: FormGroupController,
       link: link,
       require: "formGroup",
@@ -41,7 +40,7 @@ module ui {
       var ngTarget: angular.IAugmentedJQuery = angular.element(targets[0]);
       ngTarget.addClass("form-control");
 
-      // when decorate
+      // will observe the target (an input, select or textarea with an ngModel declaration
       if (element[0].hasAttribute("observe")) {
         formGroupController.observe(ngTarget);
       }

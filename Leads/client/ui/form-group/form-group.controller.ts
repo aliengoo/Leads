@@ -17,22 +17,31 @@ module ui {
     constructor(
       $scope: IFormGroupScope,
       private $element: angular.IAugmentedJQuery,
-      private $timeout: angular.ITimeoutService) {
+      private $timeout: angular.ITimeoutService,
+      private $log: angular.ILogService) {
       this.scope = $scope;
     }
 
+    /**
+     * Observations only occur when the form-group[observe] naked attribute is declared
+     * @param observedElement - the element, a user input, that has an ngModel binding.
+     */
     public observe(observedElement: angular.IAugmentedJQuery): void {
 
       var me: FormGroupController = this;
 
-      function deferredLinkToParent(): void {
+      function initObservations(): void {
+
+        var ngModel: angular.INgModelController = observedElement.controller("ngModel");
+
+        if (angular.isUndefined(ngModel)) {
+          me.$log.error(`Cannot observe '${observedElement.attr("name")}' because there is no ng-model controller`);
+        }
 
         // clean up previous scope
         if (me.ngModelWatch) {
           me.ngModelWatch();
         }
-
-        var ngModel: angular.INgModelController = observedElement.controller("ngModel");
 
         me.ngModelWatch = me.scope.$watch((): any => {
           return ngModel.$viewValue;
@@ -55,9 +64,8 @@ module ui {
         });
       }
 
-      // defer.  deferredLinkToParent shouldn't run until other sync code has completed,
-      // namely all the directive compilation
-      this.$timeout(deferredLinkToParent);
+      // defer observe until after sync code has completed
+      this.$timeout(initObservations);
     };
   }
 }
