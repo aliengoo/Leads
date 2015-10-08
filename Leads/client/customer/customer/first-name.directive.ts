@@ -19,10 +19,11 @@ module customer {
               ng-model="customer.firstName"
               ng-model-options="{ debounce: 500 }"
               class="customer-first-name"
+              limit-chars='{"letters": true, "special": true}'
               required
               maxlength="40">
               <help-block>
-                <ng-messages for="ngModel.$error">
+                <ng-messages for="firstName.$error">
                   <ng-message when="required">Required</ng-message>
                   <ng-message when="maxlength">Too long</ng-message>
                 </ng-messages>

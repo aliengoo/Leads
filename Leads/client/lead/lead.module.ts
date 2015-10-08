@@ -20,7 +20,6 @@ module lead {
 
   angular.module("lead", [
       "ui.router",
-      "leads.templates",
       "ui",
       "customer"
     ])

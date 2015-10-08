@@ -14,11 +14,10 @@ module ui {
     private ngModelWatch: Function;
 
     /* @ngInject */
-    constructor(
-      $scope: IFormGroupScope,
-      private $element: angular.IAugmentedJQuery,
-      private $timeout: angular.ITimeoutService,
-      private $log: angular.ILogService) {
+    constructor($scope: IFormGroupScope,
+                private $element: angular.IAugmentedJQuery,
+                private $timeout: angular.ITimeoutService,
+                private $log: angular.ILogService) {
       this.scope = $scope;
     }
 
@@ -32,12 +31,27 @@ module ui {
 
       function initObservations(): void {
 
+        var name: string = observedElement.attr("name");
+
+        if (angular.isUndefined(name)) {
+          me.$log.error("An observed element requires and name attribute");
+          return;
+        }
+
+        if (me.scope.hasOwnProperty(name)) {
+          me.$log.error(`There is already an element with the same name '${name}' attribute on this scope`);
+          return;
+        }
+
         var ngModel: angular.INgModelController = observedElement.controller("ngModel");
+
 
         if (angular.isUndefined(ngModel)) {
           me.$log.error(`Cannot observe '${observedElement.attr("name")}' because there is no ng-model controller`);
           return;
         }
+
+        me.scope[name] = ngModel;
 
         // clean up previous scope
         if (me.ngModelWatch) {

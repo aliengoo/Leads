@@ -18,6 +18,7 @@ module customer {
               name="middleNames"
               ng-model="customer.middleNames"
               ng-model-options="{ debounce: 500 }"
+              limit-chars='{"letters": true, "special": true}'
               maxlength="40"
               class="customer-middle-names">
           </form-group>

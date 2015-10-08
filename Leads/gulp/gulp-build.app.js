@@ -126,7 +126,8 @@ gulp.task('app:js', ['app:ts'], function () {
 });
 
 /*
- BUILD HTML AND JADE TEMPLATES INTO ANGULAR MODULE
+  -->DEPRECATED IN FAVOUR OF INLINE TEMPLATES<--
+  BUILD HTML AND JADE TEMPLATES INTO ANGULAR MODULE
  */
 gulp.task("clean:templates", function (done) {
   var temporaryJavaScriptTemplateFileUri = path.join(temporaryFilesPath, temporaryJavaScriptTemplateFileName);
@@ -134,6 +135,11 @@ gulp.task("clean:templates", function (done) {
   helper.clean(temporaryJavaScriptTemplateFileUri, done);
 });
 
+
+/*
+ -->DEPRECATED IN FAVOUR OF INLINE TEMPLATES<--
+ BUILD HTML AND JADE TEMPLATES INTO ANGULAR MODULE
+ */
 gulp.task('app:templates', ['clean:templates'], function () {
 
   var src = path.join(client.src.js.root, "**/*");
@@ -170,7 +176,7 @@ gulp.task("app", function (done) {
   };
 
   runSequence(
-    ['app:js', 'app:templates'],
+    ['app:js'],
     "app:combine",
     completionCallback);
 

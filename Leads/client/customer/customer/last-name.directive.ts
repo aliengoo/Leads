@@ -19,6 +19,7 @@ module customer {
               ng-model="customer.lastName"
               ng-model-options="{ debounce: 500 }"
               class="customer-last-name"
+              limit-chars='{"letters": true, "special": true}'
               maxlength="40"
               required>
           </form-group>

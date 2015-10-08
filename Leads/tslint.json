@@ -63,7 +63,7 @@
     "quotemark": [true, "double", "avoid-escape"],
     "radix": true,
     "semicolon": true,
-    "sort-object-literal-keys": true,
+    "sort-object-literal-keys": false,
     "switch-default": true,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true,

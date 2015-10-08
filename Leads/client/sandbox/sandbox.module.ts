@@ -6,6 +6,6 @@ module sandbox {
 
   angular.module("sandbox", [
     "ui.router",
-    "leads.templates", "customer", "lead", "ui"
+    "customer", "lead", "ui"
   ]).config(SandboxConfig);
 }

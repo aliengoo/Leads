@@ -7,13 +7,19 @@ module lead {
   export class LeadConfig {
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
-      $stateProvider.state("lead", <angular.ui.IState>{
+
+      var leadState: angular.ui.IState = {
         abstract: true,
+        url: "/lead",
         controller: LeadController,
         controllerAs: "vm",
-        templateUrl: "lead/lead.html",
-        url: "/lead"
-      });
+        template:
+          `
+            <div><ui-view></ui-view></div>
+          `
+      };
+
+      $stateProvider.state("lead", leadState);
     }
   }
 }

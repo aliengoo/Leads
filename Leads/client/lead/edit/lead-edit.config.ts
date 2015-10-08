@@ -8,12 +8,19 @@ module lead {
 
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
-      $stateProvider.state("lead.edit", <angular.ui.IState>{
+
+      var editState: angular.ui.IState = {
+        url: "/edit",
         controller: LeadEditController,
         controllerAs: "vm",
-        templateUrl: "lead/edit/lead-edit.html",
-        url: "/edit"
-      });
+        template: `
+          <div id="lead.edit">
+            <header><h1>Edit Lead</h1></header>
+          </div>
+        `
+      };
+
+      $stateProvider.state("lead.edit", editState);
     }
   }
 }
