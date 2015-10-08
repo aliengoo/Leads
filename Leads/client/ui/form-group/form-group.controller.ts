@@ -36,6 +36,7 @@ module ui {
 
         if (angular.isUndefined(ngModel)) {
           me.$log.error(`Cannot observe '${observedElement.attr("name")}' because there is no ng-model controller`);
+          return;
         }
 
         // clean up previous scope
