@@ -22,7 +22,19 @@ module ui {
     return {
       link: link,
       restrict: "E",
-      templateUrl: "ui/sidebar/sidebar.directive.html",
+      template:
+        `
+          <nav class="sidebar">
+            <a href="" ng-click="toggle()" class="sidebar-toggle"></a>
+
+            <div class="data-sidebar">
+              <div class="data-sidebar-header" ng-class="{'sidebar-header': open, 'sidebar-header-closed': !open}">
+              </div>
+              <clearfix></clearfix>
+              <div data-sidebar-content ng-class="{'sidebar-content': open, 'sidebar-content-closed': !open}"></div>
+            </div>
+          </nav>
+        `,
       transclude: true
     };
 

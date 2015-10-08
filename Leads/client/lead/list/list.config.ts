@@ -12,7 +12,18 @@ module lead {
       $stateProvider.state("lead.list", {
         controller: ListController,
         controllerAs: "vm",
-        templateUrl: "lead/list/list.html",
+        template:
+          `
+            <flex-container>
+              <list-sidebar></list-sidebar>
+              <main-content>
+                <header>
+                  <h1></h1>
+                </header>
+                <list-table></list-table>
+              </main-content>
+            </flex-container>
+          `,
         url: "/list"
       });
     }

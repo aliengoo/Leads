@@ -6,7 +6,14 @@ module lead {
   export function searchInput(): angular.IDirective {
     return {
       restrict: "E",
-      templateUrl: "lead/search-input/search-input.directive.html"
+      template:
+        `
+          <div>
+            <form-group>
+              <input type="text" placeholder="search" ng-model="vm.search" maxlength="30">
+            </form-group>
+          </div>
+        `
     };
   }
 }
