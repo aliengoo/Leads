@@ -9,6 +9,8 @@
 ///<reference path="customer/middle-names.directive.ts"/>
 ///<reference path="customer/last-name.directive.ts"/>
 ///<reference path="customer/birth-date.directive.ts"/>
+///<reference path="address/address-line.directive.ts"/>
+///<reference path="customer/customer-name-part.directive.ts"/>
 
 module customer {
   "use strict";
@@ -20,6 +22,8 @@ module customer {
     .directive("lastName", lastName)
     .directive("birthDate", birthDate)
     .directive("customer", customer)
+    .directive("customerNamePart", customerNamePart)
     .directive("address", address)
+    .directive("addressLine", addressLine)
     .directive("addressType", addressType);
 }

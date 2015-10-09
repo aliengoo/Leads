@@ -10,19 +10,14 @@ module customer {
         customer: "="
       },
       template:
-        `<div>
-          <form-group  observe>
-            <control-label>Last name</control-label>
-            <input
-              type="text"
-              name="lastName"
-              ng-model="customer.lastName"
-              ng-model-options="{ debounce: 500 }"
-              class="customer-last-name"
-              limit-chars='{"letters": true, "special": true}'
-              maxlength="40"
-              required>
-          </form-group>
+        `
+        <div>
+          <customer-name-part label="Last name" name="lastName" required>
+            <ng-messages for="lastName.$error">
+                <ng-message when="required">Required</ng-message>
+                <ng-message when="maxlength">Too long</ng-message>
+              </ng-messages>
+          </customer-name-part>
         </div>`
     };
   }

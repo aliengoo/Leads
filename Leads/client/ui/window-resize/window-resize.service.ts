@@ -25,7 +25,10 @@ module ui {
     private throttleTimeout: angular.IPromise<any>;
 
     /* @ngInject */
-    constructor(private $window: angular.IWindowService, private $timeout: angular.ITimeoutService) {
+    constructor(
+      private $window: angular.IWindowService,
+      private $timeout: angular.ITimeoutService,
+      private $: JQueryStatic) {
       this.w = angular.element($window);
       this.observers = {};
     }
@@ -45,8 +48,8 @@ module ui {
             (): void => {
 
             var windowSize: IWindowSize = {
-              h: $(me.$window).height(),
-              w: $(me.$window).width()
+              h: me.$(me.$window).height(),
+              w: me.$(me.$window).width()
             };
 
             Object.keys(me.observers).forEach((observer: string): void => {

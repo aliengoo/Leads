@@ -5,12 +5,10 @@ module customer {
   export function birthDate(): angular.IDirective {
     return {
       replace: true,
+      require: "^customer",
       restrict: "E",
-      scope: {
-        customer: "="
-      },
-      template:
-        `<div>
+      template: `
+        <div>
           <form-group>
             <control-label>Birth date</control-label>
             <input

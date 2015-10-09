@@ -31,6 +31,12 @@
     },
     "greensock/greensock.d.ts": {
       "commit": "7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
+    },
+    "moment/moment.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     }
   }
 }

@@ -17,40 +17,12 @@ module customer {
       },
       template: `
         <section ng-form="addressForm" class="address">
-          <form-group>
-            <control-label>
-              Line 1
-            </control-label>
-            <input type="text" ng-model="address.line1" name="line1" required class="address-line" maxlength="40">
-          </form-group>
+          <address-line label="Line 1" name="line1"></address-line>
+          <address-line label="Line 2" name="line2"></address-line>
+          <address-line label="Line 3" name="line3"></address-line>
+          <address-line label="Town" name="town"></address-line>
 
-          <form-group>
-            <control-label>
-              Line 2
-            </control-label>
-            <input type="text" ng-model="address.line2" name="line2" class="address-line" maxlength="40">
-          </form-group>
-
-          <form-group>
-            <control-label>
-              Line 3
-            </control-label>
-            <input type="text" ng-model="address.line3" name="line3" class="address-line" maxlength="40">
-          </form-group>
-
-          <form-group>
-            <control-label>
-              Town
-            </control-label>
-            <input type="text" ng-model="address.town" name="town" required class="address-town" maxlength="40">
-          </form-group>
-
-          <form-group>
-            <control-label>
-              Postcode
-            </control-label>
-            <input type="text" ng-model="address.postcode" name="postcode" required class="address-postcode" maxlength="8">
-          </form-group>
+          <postcode></postcode>
         </section>
       `
     };

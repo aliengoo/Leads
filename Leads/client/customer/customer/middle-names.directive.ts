@@ -5,23 +5,15 @@ module customer {
   export function middleNames(): angular.IDirective {
     return {
       replace: true,
+      require: "^customer",
       restrict: "E",
-      scope: {
-        customer: "="
-      },
       template:
         `<div>
-          <form-group observe>
-            <control-label>Middle names</control-label>
-            <input
-              type="text"
-              name="middleNames"
-              ng-model="customer.middleNames"
-              ng-model-options="{ debounce: 500 }"
-              limit-chars='{"letters": true, "special": true}'
-              maxlength="40"
-              class="customer-middle-names">
-          </form-group>
+          <customer-name-part label="Middle names" name="middleNames" required>
+            <ng-messages for="middleNames.$error">
+              <ng-message when="maxlength">Too long</ng-message>
+            </ng-messages>
+          </customer-name-part>
         </div>`
     };
   }

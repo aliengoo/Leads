@@ -1,4 +1,5 @@
 ///<reference path="../../typings/tsd.d.ts"/>
+///<reference path="../vendor/vendor.module.ts"/>
 ///<reference path="clearfix/clearfix.directive.ts"/>
 ///<reference path="flex-container/flex-container.directive.ts"/>
 ///<reference path="main-content/main-content.directive.ts"/>
@@ -17,10 +18,11 @@
 ///<reference path="key-codes/numeric-key-codes.ts"/>
 ///<reference path="key-codes/letter-key-codes.ts"/>
 
+
 module ui {
   "use strict";
 
-  angular.module("ui", ["ngMessages", "ngAnimate"])
+  angular.module("ui", ["ngMessages", "ngAnimate", "vendor"])
     .constant("keyCodes", KeyCodes)
     .constant("specialKeyCodes", specialKeyCodes())
     .constant("modifierKeyCodes", modifierKeyCodes())

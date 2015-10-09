@@ -11,9 +11,9 @@ module customer {
       template:
         `
           <div ng-form="customerForm">
-            <first-name customer="customer"></first-name>
-            <middle-names customer="customer"></middle-names>
-            <last-name customer="customer"></last-name>
+            <first-name></first-name>
+            <middle-names></middle-names>
+            <last-name></last-name>
             <birth-date customer="customer"></birth-date>
           </div>
         `

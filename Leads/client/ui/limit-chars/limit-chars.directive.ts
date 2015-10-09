@@ -7,13 +7,11 @@ module ui {
 
   /* @ngInject */
   export function limitChars(
-    $timeout: angular.ITimeoutService,
     keyCodeInfoService: IKeyCodeInfoService,
     limitCharsOptionsService: ILimitCharsOptionsService): angular.IDirective {
 
     return {
       link: link,
-      priority: -1,
       restrict: "A"
     };
 
@@ -21,21 +19,18 @@ module ui {
                   element: angular.IAugmentedJQuery,
                   attributes: ILimitCharsAttributes): void {
 
-      $timeout(function(): void{
-        var options: ILimitCharsOptions = limitCharsOptionsService.compile(attributes);
+      var options: ILimitCharsOptions = limitCharsOptionsService.compile(attributes);
 
-        $(element).on("keydown", function (ev: JQueryEventObject): void {
+      $(element).on("keydown", function (ev: JQueryEventObject): void {
 
-          var keyCodeInfo: IKeyCodeInfo = keyCodeInfoService.compile(ev);
+        var keyCodeInfo: IKeyCodeInfo = keyCodeInfoService.compile(ev);
 
-          if (!limitCharsOptionsService.match(options, keyCodeInfo)) {
-            ev.preventDefault();
-          }
+        if (!limitCharsOptionsService.match(options, keyCodeInfo)) {
+          ev.preventDefault();
+        }
 
-          scope.$apply();
-        });
-
-      }, 1000);
+        scope.$apply();
+      });
     }
   }
 }

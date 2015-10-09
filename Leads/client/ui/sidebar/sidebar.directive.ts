@@ -2,6 +2,7 @@
 ///<reference path="../window-resize/window-resize.service.ts"/>
 
 module ui {
+  import TimelineMaxService = vendor.TimelineMaxService;
   "use strict";
 
   interface ISidebarScope extends angular.IScope {
@@ -18,12 +19,14 @@ module ui {
 
   /* @ngInject */
   export function sidebar(windowResizeService: IWindowResizeService,
-                          $window: angular.IWindowService): angular.IDirective {
+                          $window: angular.IWindowService,
+                          $: JQueryStatic,
+                          TimelineMax: TimelineMax): angular.IDirective {
+
     return {
       link: link,
       restrict: "E",
-      template:
-        `
+      template: `
           <nav class="sidebar">
             <a href="" ng-click="toggle()" class="sidebar-toggle"></a>
 
@@ -105,7 +108,7 @@ module ui {
       });
 
       function opening(): void {
-        var tl: TimelineMax = new TimelineMax();
+        var tl: TimelineMax = new (<any>TimelineMax)();
 
         tl.to(
           $nav,
@@ -125,7 +128,8 @@ module ui {
       }
 
       function closing(): void {
-        var tl: TimelineMax = new TimelineMax();
+        var tl: TimelineMax = new (<any>TimelineMax)();
+
         tl.to(
           $sidebarElements,
           duration,
