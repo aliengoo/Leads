@@ -36,8 +36,10 @@ module ui {
     .constant("modifierKeyCodes", modifierKeyCodes())
     .constant("numericKeyCodes", numericKeyCodes())
     .constant("letterKeyCodes", letterKeyCodes())
-    .constant("alignItemsOptions". alignItemsOptions())
-    .constant("flexDirectionOptions". flexDirectionOptions())
+    .constant("alignItemsOptions", alignItemsOptions())
+    .constant("flexDirectionOptions", flexDirectionOptions())
+    .constant("flexWrapOptions", flexWrapOptions())
+    .constant("justifyContentOptions", justifyContentOptions())
 
     .directive("clearfix", clearfix)
     .directive("mainContent", mainContent)

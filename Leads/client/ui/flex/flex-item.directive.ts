@@ -2,6 +2,13 @@
 module ui {
   "use strict";
 
+  interface IFlexItemAttributes extends angular.IAttributes {
+    order?: number;
+    grow?: number;
+    shrink?: number;
+    basis?: string;
+  }
+
   export function flexItem(): angular.IDirective {
     return {
       // TODO: align-self
@@ -9,10 +16,12 @@ module ui {
       replace: true,
       require: "^flex",
       transclude: true,
-      template:
-        `
+      template: function(element: angular.IAugmentedJQuery, attributes: IFlexItemAttributes): string {
+
+        return `
           <div class="flex-item" ng-transclude></div>
-        `
+        `;
+      }
     };
   }
 }
