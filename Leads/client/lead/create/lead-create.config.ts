@@ -17,14 +17,14 @@ module lead {
         template:
           `
             <div>
-              <flex-column>
-                <flex-row>
+              <flex direction="column">
+                <flex direction="row" justify="center">
                   <view-header>
                     Create lead
                   </view-header>
                 </flex-row>
 
-                <flex-row>
+                <flex direction="row">
                   <flex-item>
                      <view-sub-header>
                         Customer details
@@ -46,8 +46,8 @@ module lead {
 
                      <lead-details lead="vm.lead"></lead-details>
                   </flex-item>
-                </flex-row>
-              </flex-column>
+                </flex>
+              </flex>
 
             </div>
           `
