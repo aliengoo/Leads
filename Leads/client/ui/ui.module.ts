@@ -17,6 +17,8 @@
 ///<reference path="key-codes/modifier-key-codes.ts"/>
 ///<reference path="key-codes/numeric-key-codes.ts"/>
 ///<reference path="key-codes/letter-key-codes.ts"/>
+///<reference path="view-header/view-header.directive.ts"/>
+///<reference path="view-sub-header/view-sub-header.directive.ts"/>
 
 
 module ui {
@@ -37,6 +39,8 @@ module ui {
     .directive("helpBlock", helpBlock)
     .directive("formGroup", formGroup)
     .directive("limitChars", limitChars)
+    .directive("viewHeader", viewHeader)
+    .directive("viewSubHeader", viewSubHeader)
 
     .service("keyCodeInfoService", KeyCodeInfoService)
     .service("limitCharsOptionsService", LimitCharsOptionsService)

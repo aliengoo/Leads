@@ -18,7 +18,7 @@ module lead {
               <list-sidebar></list-sidebar>
               <main-content>
                 <header>
-                  <h1></h1>
+                  <h1>Leads</h1>
                 </header>
                 <list-table></list-table>
               </main-content>

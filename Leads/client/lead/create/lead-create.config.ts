@@ -16,28 +16,39 @@ module lead {
         controllerAs: "vm",
         template:
           `
-            <div id="lead.create" class="container">
-              <div class="col-sm-12">
-                <header><h1>Create lead</h1></header>
-              </div>
+            <div>
+              <flex-column>
+                <flex-row>
+                  <view-header>
+                    Create lead
+                  </view-header>
+                </flex-row>
 
-              <div class="col-sm-6">
-                <header>
-                  <h3>Customer details</h3>
-                </header>
-                <customer customer="vm.customer"></customer>
-                <header>
-                  <h3>Customer address</h3>
-                </header>
-                <address address="vm.customer.address"></address>
-              </div>
+                <flex-row>
+                  <flex-item>
+                     <view-sub-header>
+                        Customer details
+                     </view-sub-header>
 
-              <div class="col-sm-6">
-                <header>
-                  <h3>Lead details</h3>
-                </header>
-                <lead-details lead="vm.lead"></lead-details>
-              </div>
+                     <customer customer="vm.customer"></customer>
+                  </flex-item>
+                  <flex-item>
+                    <view-sub-header>
+                      Customer address
+                    </view-sub-header>
+
+                    <address address="vm.customer.address"></address>
+                  </flex-item>
+                  <flex-item>
+                     <view-sub-header>
+                      Lead details
+                     </view-sub-header>
+
+                     <lead-details lead="vm.lead"></lead-details>
+                  </flex-item>
+                </flex-row>
+              </flex-column>
+
             </div>
           `
       };
