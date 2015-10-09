@@ -1,3 +1,27 @@
 .flex-item {
+  border: 1px solid pink;
+}
 
+.flex-item-align-self-auto {
+  align-self: auto;
+}
+
+.flex-item-align-self-flex-start {
+  align-self: flex-start;
+}
+
+.flex-item-align-self-flex-end {
+  align-self: flex-end;
+}
+
+.flex-item-align-self-center {
+  align-self: center;
+}
+
+.flex-item-align-self-baseline {
+  align-self: baseline;
+}
+
+.flex-item-align-self-stretch {
+  align-self: stretch;
 }

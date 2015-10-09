@@ -16,6 +16,10 @@ module ui {
     alignItems?: string;
   }
 
+  class FlexController {
+  }
+
+
   /* @ngInject */
   export function flex($log: angular.ILogService,
                           flexDirectionOptions: Array<string>,
@@ -28,6 +32,7 @@ module ui {
       restrict: "E",
       replace: true,
       transclude: true,
+      controller: FlexController,
       template: function (element: angular.IAugmentedJQuery, attributes: IFlexAttributes): string {
 
         // set defaults

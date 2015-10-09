@@ -1,9 +1,14 @@
+@mixin flex-debug($color) {
+  border: 1px solid $color;
+}
+
 .flex {
   display: flex;
 }
 
 .flex-direction-row {
   flex-direction: row;
+  @include flex-debug(red);
 }
 
 .flex-direction-row-reverse {
@@ -12,6 +17,7 @@
 
 .flex-direction-column {
   flex-direction: column;
+  @include flex-debug(blue);
 }
 
 .flex-direction-column-reverse {
@@ -49,3 +55,26 @@
 .flex-justify-content-space-around {
   justify-content: space-around;
 }
+
+.flex-align-items-stretch {
+  align-items: stretch;
+}
+
+.flex-align-items-flex-start {
+  align-items: flex-start;
+}
+
+.flex-align-items-flex-end {
+  align-items: flex-end;
+}
+
+.flex-align-items-center {
+  align-items: center;
+}
+
+.flex-align-items-baseline {
+  align-items: baseline;
+}
+
+
+

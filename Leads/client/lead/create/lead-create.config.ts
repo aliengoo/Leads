@@ -10,12 +10,7 @@ module lead {
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
 
-      var leadCreate: angular.ui.IState = {
-        url: "/create",
-        controller: LeadCreateController,
-        controllerAs: "vm",
-        template:
-          `
+      var t: string = `
             <div>
               <flex direction="column">
                 <flex direction="row" justify="center">
@@ -50,7 +45,29 @@ module lead {
               </flex>
 
             </div>
-          `
+          `;
+
+      var t2: string = `
+          <div>
+            <flex direction="column" align-items="center" wrap="wrap">
+              <flex-item grow="1" shrink="1"></flex-item>
+              <flex-item grow="2">
+                <view-header>
+                  Create Lead
+                </view-header>
+              </flex-item>
+
+              <flex-item grow="1" shrink="1"></flex-item>
+
+            </flex>
+          </div>
+        `;
+
+      var leadCreate: angular.ui.IState = {
+        url: "/create",
+        controller: LeadCreateController,
+        controllerAs: "vm",
+        template: t2
       };
 
       $stateProvider.state("lead.create", leadCreate);
