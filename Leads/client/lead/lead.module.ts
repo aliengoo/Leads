@@ -2,6 +2,7 @@
 ///<reference path="../ui/ui.module.ts"/>
 ///<reference path="lead.config.ts"/>
 ///<reference path="create/lead-create.config.ts"/>
+///<reference path="create/lead-create-sidebar.directive.ts"/>
 ///<reference path="edit/lead-edit.config.ts"/>
 ///<reference path="search-input/search-input.directive.ts"/>
 ///<reference path="lead-details/lead-details.directive.ts"/>
@@ -32,6 +33,8 @@ module lead {
     .directive("listSidebar", listSidebar)
     .directive("listTable", listTable)
     .directive("searchInput", searchInput)
+    // lead.create
+    .directive("leadCreateSidebar", leadCreateSidebar)
     .config(LeadConfig)
     .config(LeadCreateConfig)
     .config(LeadEditConfig)

@@ -5,6 +5,7 @@ module ui {
 
   export function alignItemsOptions(): Array<string> {
     return [
+      "stretch",
       "flex-start",
       "flex-end",
       "center",

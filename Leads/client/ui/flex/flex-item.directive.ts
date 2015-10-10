@@ -14,7 +14,7 @@ module ui {
   export function flexItem(): angular.IDirective {
     return {
       // TODO: align-self
-      restrict: "E",
+      restrict: "AE",
       replace: true,
       require: "^flex",
       transclude: true,
