@@ -11,31 +11,32 @@ module lead {
     constructor($stateProvider: angular.ui.IStateProvider) {
 
       var t2: string = `
-            <flex direction="row">
+            <flex direction="row" wrap="nowrap">
               <lead-create-sidebar></lead-create-sidebar>
               <flex-item grow="1">
-                <flex direction="row">
-                  <flex-item basis="33%">
-                    <view-sub-header>
-                      Customer details
-                    </view-sub-header>
-                    <customer customer="vm.customer"></customer>
-                  </flex-item>
-                  <flex-item basis="33%">
-                    <view-sub-header>
-                      Customer address
-                    </view-sub-header>
-                    <address address="vm.customer.address"></address>
-                  </flex-item>
-                  <flex-item basis="33%">
-                    <view-sub-header>
-                      Lead details
-                    </view-sub-header>
-                    <lead-details lead="vm.lead">
-                    </lead-details>
-                  </flex-item>
-                </flex>
+              <flex direction="row" wrap="wrap">
+               <flex-item grow="1">
+                  <view-sub-header>
+                    Customer details
+                  </view-sub-header>
+                  <customer customer="vm.customer"></customer>
+                </flex-item>
+                <flex-item grow="1">
+                  <view-sub-header>
+                    Customer address
+                  </view-sub-header>
+                  <address address="vm.customer.address"></address>
+                </flex-item>
+                <flex-item grow="1">
+                  <view-sub-header>
+                    Lead details
+                  </view-sub-header>
+                  <lead-details lead="vm.lead">
+                  </lead-details>
+                </flex-item>
+              </flex>
               </flex-item>
+
             </flex>
         `;
 

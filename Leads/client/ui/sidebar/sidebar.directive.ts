@@ -2,7 +2,7 @@
 ///<reference path="../window-resize/window-resize.service.ts"/>
 
 module ui {
-  import TimelineMaxService = vendor.TimelineMaxService;
+
   "use strict";
 
   interface ISidebarScope extends angular.IScope {

@@ -8,6 +8,7 @@ module ui {
     shrink?: number;
     basis?: string;
     alignSelf?: string;
+    minWidth: number;
   }
 
   /* @ngInject */
@@ -30,7 +31,9 @@ module ui {
       element.css("flex-grow", attributes.grow || 0);
       element.css("flex-shrink", attributes.shrink || 0);
       element.css("flex-basis", attributes.basis || "auto");
-
+      if (attributes.hasOwnProperty("minWidth")) {
+        element.css("min-width", attributes.minWidth);
+      }
       element.addClass(`flex-item-align-self-${attributes.alignSelf || "auto"}`);
     }
   }
