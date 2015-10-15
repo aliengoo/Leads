@@ -11,6 +11,7 @@
 ///<reference path="customer/birth-date.directive.ts"/>
 ///<reference path="address/address-line.directive.ts"/>
 ///<reference path="customer/customer-name-part.directive.ts"/>
+///<reference path="address/postcode.directive.ts"/>
 
 module customer {
   "use strict";
@@ -25,5 +26,6 @@ module customer {
     .directive("customerNamePart", customerNamePart)
     .directive("address", address)
     .directive("addressLine", addressLine)
+    .directive("postcode", postcode)
     .directive("addressType", addressType);
 }

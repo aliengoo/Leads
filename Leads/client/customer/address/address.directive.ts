@@ -17,7 +17,7 @@ module customer {
       },
       template: `
         <section ng-form="addressForm" class="address">
-          <address-line label="Line 1" name="line1"></address-line>
+          <address-line label="Line 1" name="line1" required></address-line>
           <address-line label="Line 2" name="line2"></address-line>
           <address-line label="Line 3" name="line3"></address-line>
           <address-line label="Town" name="town"></address-line>

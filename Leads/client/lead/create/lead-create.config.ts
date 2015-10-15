@@ -1,5 +1,6 @@
 ///<reference path="lead-create.controller.ts"/>
 ///<reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts"/>
+///<reference path="lead-create.template.ts"/>
 
 module lead {
   "use strict";
@@ -10,41 +11,11 @@ module lead {
     /* @ngInject */
     constructor($stateProvider: angular.ui.IStateProvider) {
 
-      var t2: string = `
-            <flex direction="row" wrap="nowrap">
-              <lead-create-sidebar></lead-create-sidebar>
-              <flex-item grow="1">
-              <flex direction="row" wrap="wrap">
-               <flex-item grow="1">
-                  <view-sub-header>
-                    Customer details
-                  </view-sub-header>
-                  <customer customer="vm.customer"></customer>
-                </flex-item>
-                <flex-item grow="1">
-                  <view-sub-header>
-                    Customer address
-                  </view-sub-header>
-                  <address address="vm.customer.address"></address>
-                </flex-item>
-                <flex-item grow="1">
-                  <view-sub-header>
-                    Lead details
-                  </view-sub-header>
-                  <lead-details lead="vm.lead">
-                  </lead-details>
-                </flex-item>
-              </flex>
-              </flex-item>
-
-            </flex>
-        `;
-
       var leadCreate: angular.ui.IState = {
         url: "/create",
         controller: LeadCreateController,
         controllerAs: "vm",
-        template: t2
+        template: leadCreateTemplate()
       };
 
       $stateProvider.state("lead.create", leadCreate);

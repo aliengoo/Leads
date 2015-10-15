@@ -34,7 +34,7 @@ module ui {
         var name: string = observedElement.attr("name");
 
         if (angular.isUndefined(name)) {
-          me.$log.error("An observed element requires and name attribute");
+          me.$log.error("An observed element requires and name attribute", observedElement);
           return;
         }
 

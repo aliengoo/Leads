@@ -15,6 +15,9 @@ module customer {
       replace: true,
       require: "^address",
       template: function (element: angular.IAugmentedJQuery, attributes: IAddressLineAttributes): string {
+
+        var required: boolean = attributes.hasOwnProperty("required");
+
         return `
         <div>
           <form-group observe>
@@ -24,9 +27,14 @@ module customer {
               class='address-line'
               maxlength='40'
               ng-model="address.${attributes.name}"
-              ng-required='${attributes.hasOwnProperty("required")}'
+              ng-required='${required}'
               name="${attributes.name}"
               >
+              <help-block>
+                <ng-messages for="${attributes.name}.$error">
+                  ${required ? "<ng-message when='required'>Required</ng-message>" : ""}
+                </ng-messages>
+              </help-block>
           </form-group>
         </div>`;
       }

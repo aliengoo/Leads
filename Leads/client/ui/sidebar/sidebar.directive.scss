@@ -26,6 +26,9 @@ $sidebar-list-item-transition-time: .1s;
   margin: $sidebar-margin;
   padding: $sidebar-padding;
   flex-direction: row;
+  @media (max-width: 1008px) {
+    display: none;
+  }
 }
 
 .sidebar-toggle {
